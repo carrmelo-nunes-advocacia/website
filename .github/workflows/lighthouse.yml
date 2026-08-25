@@ -1,0 +1,60 @@
+name: Lighthouse
+
+# Performance / SEO / accessibility / best-practices audit against the real Netlify
+# deploy preview. Blocks on accessibility + best-practices (error @0.9); SEO and
+# performance stay "warn" (SEO is penalized by the preview's noindex; performance is
+# noisy on shared runners). See lighthouserc.json.
+# Requires the Netlify deploy previews to be publicly reachable.
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  statuses: read
+
+concurrency:
+  group: lighthouse-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    name: lighthouse
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - id: preview
+        uses: actions/github-script@v9.0.0
+        with:
+          script: |
+            const sha = context.payload.pull_request.head.sha;
+            const { owner, repo } = context.repo;
+            const deadline = Date.now() + 10 * 60 * 1000;
+            // Netlify publishes the preview as a COMMIT STATUS (not a GitHub Deployment):
+            // context "netlify/<site>/deploy-preview", state "success", target_url = the
+            // public *.netlify.app preview. Accept that; reject the app.netlify.com admin URL.
+            const isPreview = (u) => !!u && /\.netlify\.app/.test(u) && !/app\.netlify\.com/.test(u);
+            core.info(`Waiting for a successful Netlify deploy preview for ${sha}`);
+            while (Date.now() < deadline) {
+              const statuses = await github.rest.repos.listCommitStatusesForRef({
+                owner, repo, ref: sha, per_page: 100,
+              });
+              const ok = statuses.data.find(
+                (s) => /netlify/i.test(s.context) && s.state === "success" && isPreview(s.target_url),
+              );
+              if (ok) {
+                core.info(`Preview ready: ${ok.target_url}`);
+                core.setOutput("url", ok.target_url);
+                return;
+              }
+              await new Promise((r) => setTimeout(r, 10000));
+            }
+            core.setFailed("Timed out waiting for a successful Netlify deploy preview");
+      - uses: treosh/lighthouse-ci-action@12.6.2
+        with:
+          urls: ${{ steps.preview.outputs.url }}
+          runs: 3
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
