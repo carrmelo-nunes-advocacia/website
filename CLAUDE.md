@@ -3,8 +3,9 @@
 Site institucional do escritório **Carmelo Nunes Advocacia**. Next.js 16 (App Router) + React 19 +
 TypeScript + Tailwind, em português (pt-BR). Deploy contínuo na Netlify a partir de `main`.
 
-Construído para que **o escritório edite o site com o Claude Code** — troque textos, áreas de
-atuação, equipe — **sem tocar em código ou git**. O portão de qualidade é o `make check`; se
+Construído para que **o escritório edite o site com o Claude Code** — principalmente **publicar
+novos artigos no blog**, e ocasionalmente trocar textos institucionais — **sem tocar em código ou
+git**. O portão de qualidade é o `make check`; se
 passar, publica (auto-deploy). Otimize para mudanças seguras e reversíveis.
 
 ## Onde as coisas ficam
@@ -13,6 +14,10 @@ passar, publica (auto-deploy). Otimize para mudanças seguras e reversíveis.
   JSON-LD e footer. **Técnico.**
 - **Rotas publicadas** — `src/lib/routes.ts` → `ALL_ROUTES`. Fonte única que dirige o sitemap.
   **Adicionar página = rota aqui + pasta em `src/app/`.**
+- **Blog (o conteúdo principal)** — a criar: um artigo = um arquivo em `src/content/blog/<slug>.mdx`
+  (frontmatter: título, descrição, data, autor/OAB, tags). URL `/blog/<slug>`, SEO por artigo
+  (JSON-LD `Article`/`BlogPosting`, OG image), entrada automática no sitemap. **Publicar artigo =
+  criar o arquivo; nunca mudar o slug de artigo já publicado.**
 - **Textos institucionais** (home, sobre, áreas de atuação, equipe, contato, nav, footer) — a
   criar em `src/lib/content/site-copy.ts`. Componentes em `src/components/`.
 - **Design tokens** — `src/app/globals.css` (`--ink`, `--paper`, `--accent`). Usar via `var()`,
@@ -78,4 +83,7 @@ com check vermelho.**
 - [ ] Preencher `address`/`telephone`/OAB no JSON-LD (`src/lib/jsonld.ts`).
 - [ ] Redigir Política de Privacidade (LGPD) com o escritório.
 - [ ] Mapear URLs do site antigo → redirects 301 em `netlify.toml` antes da virada de DNS.
-- [ ] Criar `src/lib/content/site-copy.ts` e a skill `/update-website` (modelo em `yhb-website`).
+- [ ] Implementar o blog (MDX + rotas `/blog`, `/blog/<slug>`, JSON-LD `BlogPosting`, sitemap dinâmico).
+- [ ] Criar a skill `/novo-artigo` — fluxo de perguntas próprio para artigo (tema, público, tese,
+  fontes/legislação citada, revisão OAB), **diferente** do `/update-website` do `yhb-website`.
+- [ ] Criar `src/lib/content/site-copy.ts` para textos institucionais.
