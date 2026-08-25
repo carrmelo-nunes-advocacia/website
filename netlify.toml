@@ -1,0 +1,17 @@
+# Deploy config para Netlify (git-connected). Pinar build + runtime do Next torna o
+# deploy explícito e reproduzível.
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# ============================================================================
+# Redirects 301 — preencher na migração do site antigo (mapear URLs velhas → novas)
+# antes de apontar o domínio. Ex.:
+# [[redirects]]
+#   from = "/quem-somos"
+#   to = "/sobre"
+#   status = 301
+# ============================================================================
