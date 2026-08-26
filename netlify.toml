@@ -1,17 +1,39 @@
-# Deploy config para Netlify (git-connected). Pinar build + runtime do Next torna o
-# deploy explícito e reproduzível.
+# Deploy config para Netlify (git-connected). Vite SPA: build para dist/, rotas
+# resolvidas no cliente (react-router) → fallback para index.html.
 [build]
   command = "pnpm build"
-  publish = ".next"
+  publish = "dist"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[build.environment]
+  NODE_VERSION = "24"
 
-# ============================================================================
-# Redirects 301 — preencher na migração do site antigo (mapear URLs velhas → novas)
-# antes de apontar o domínio. Ex.:
-# [[redirects]]
-#   from = "/quem-somos"
-#   to = "/sobre"
-#   status = 301
-# ============================================================================
+# ---- Cabeçalhos de segurança (equivalente ao middleware do projeto Next) ----
+# CSP sem nonce: Vite não emite scripts inline; Tailwind/framer usam style inline.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ---- Redirects ----
+# Formulário estático usado só para detecção da Netlify Forms — não servir.
+[[redirects]]
+  from = "/__forms.html"
+  to = "/404"
+  status = 404
+  force = true
+
+# SPA fallback (deve ser o último).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

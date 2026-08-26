@@ -22,7 +22,7 @@ build:
 
 ## Build + serve (mais próximo de produção)
 start:
-	@$(NVM) pnpm build && pnpm start
+	@$(NVM) pnpm build && pnpm preview
 
 ## lint + type-check + build — RODE ISTO ANTES DE PUBLICAR (é o portão de qualidade)
 check:
@@ -38,4 +38,4 @@ doctor:
 
 ## Remove build e dependências
 clean:
-	@rm -rf .next node_modules
+	@rm -rf dist node_modules

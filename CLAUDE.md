@@ -1,33 +1,42 @@
 # carmelo-nunes-website — guia para o Claude Code
 
-Site institucional do escritório **Carmelo Nunes Advocacia**. Next.js 16 (App Router) + React 19 +
-TypeScript + Tailwind, em português (pt-BR). Deploy contínuo na Netlify a partir de `main`.
+Site institucional do **Carmelo Nunes Sociedade de Advogados** (Direito Empresarial e Societário,
+Av. Paulista, SP, desde 1973). Vite + React 18 + TypeScript + Tailwind/shadcn, react-router,
+em português (pt-BR). Código originado no Lovable; hoje o repo é a fonte da verdade.
+Deploy contínuo na **Netlify** a partir de `main` (git-connected).
 
-Construído para que **o escritório edite o site com o Claude Code** — principalmente **publicar
-novos artigos no blog**, e ocasionalmente trocar textos institucionais — **sem tocar em código ou
-git**. O portão de qualidade é o `make check`; se
-passar, publica (auto-deploy). Otimize para mudanças seguras e reversíveis.
+Construído para que **o escritório edite o site com o Claude Code** — principalmente publicar
+**artigos em Conteúdo**, e ocasionalmente trocar textos, fotos e sócios — **sem tocar em código
+ou git**. O portão de qualidade é o `make check`; se passar, abre PR e o merge publica.
+Otimize para mudanças seguras e reversíveis.
 
 ## Onde as coisas ficam
 
-- **Dados institucionais** (nome, domínio, descrição) — `src/lib/site.ts`. Alimenta metadata,
-  JSON-LD e footer. **Técnico.**
-- **Rotas publicadas** — `src/lib/routes.ts` → `ALL_ROUTES`. Fonte única que dirige o sitemap.
-  **Adicionar página = rota aqui + pasta em `src/app/`.**
-- **Blog (o conteúdo principal)** — a criar: um artigo = um arquivo em `src/content/blog/<slug>.mdx`
-  (frontmatter: título, descrição, data, autor/OAB, tags). URL `/blog/<slug>`, SEO por artigo
-  (JSON-LD `Article`/`BlogPosting`, OG image), entrada automática no sitemap. **Publicar artigo =
-  criar o arquivo; nunca mudar o slug de artigo já publicado.**
-- **Textos institucionais** (home, sobre, áreas de atuação, equipe, contato, nav, footer) — a
-  criar em `src/lib/content/site-copy.ts`. Componentes em `src/components/`.
-- **Design tokens** — `src/app/globals.css` (`--ink`, `--paper`, `--accent`). Usar via `var()`,
-  nunca hex/px crus.
-- **SEO** — `src/app/layout.tsx` (metadata base + JSON-LD `LegalService`), `src/lib/jsonld.ts`,
-  `src/app/robots.ts`, `src/app/sitemap.ts`. Cada página exporta seu próprio `metadata`.
-- **Segurança** — `src/middleware.ts`: CSP com nonce por request (`strict-dynamic`), HSTS,
-  `X-Frame-Options: DENY`, `nosniff`, Referrer-Policy, Permissions-Policy. Scripts inline
-  precisam do `nonce` lido de `headers().get("x-nonce")` — ver `layout.tsx`.
-- **LGPD** — `src/app/privacidade/` (obrigatória antes de qualquer formulário de contato).
+- **Páginas** — `src/pages/*.tsx`, uma por rota. Rotas em `src/App.tsx` (**técnico**).
+  `/`, `/escritorio`, `/atuacao` + 5 áreas (`/atuacao/<slug>`), `/conteudo`, `/contato`,
+  `/agendamento`, `/privacidade`, 404.
+- **Áreas de atuação** — cada uma é uma página (`DireitoEmpresarial.tsx`, …) que usa o
+  componente `src/components/AreaPage.tsx`. Textos ficam dentro de cada página.
+- **Conteúdo / artigos (o conteúdo recorrente)** — hoje `src/pages/Conteudo.tsx` tem o array
+  `articles` com 6 placeholders (`slug: "#"`). **Pendente:** estrutura real de artigos
+  (ver Pendências). Categorias fixas: Conflitos entre Sócios, Contratos Empresariais,
+  Planejamento Sucessório, Governança Empresarial, Investimentos Imobiliários.
+- **Sócios, história, princípios** — `src/pages/Escritorio.tsx`. Fotos em `src/assets/`.
+- **Navegação e rodapé** — `src/components/Navbar.tsx`, `src/components/Footer.tsx`
+  (telefone, endereço, OAB, link da Privacidade). WhatsApp: `src/components/WhatsAppButton.tsx`.
+- **SEO por página** — cada página renderiza `<SEO title description canonical jsonLd />`
+  (`src/components/SEO.tsx`, **técnico**). Home tem JSON-LD `LegalService`. Sitemap e robots
+  estáticos em `public/` — **adicionar página = rota em `App.tsx` + URL em `public/sitemap.xml`.**
+- **Formulários** — `/contato` e `/agendamento` enviam via **Netlify Forms**
+  (`src/lib/netlify-forms.ts`; detecção via `public/__forms.html`). Adicionar campo = nos dois
+  lugares. Notificações por e-mail configuradas no painel da Netlify.
+- **Política de Privacidade (LGPD)** — texto-fonte em `docs/POLITICA-DE-PRIVACIDADE.md`;
+  página em `src/pages/Privacidade.tsx`. Placeholders a preencher: CNPJ, nº OAB, DPO.
+- **Design tokens** — `src/index.css` (HSL: navy `--background`, dourado `--primary`,
+  `--radius`), `tailwind.config.ts`. Fontes Playfair Display (títulos) + Inter (corpo).
+  Usar classes/tokens, não hex crus.
+- **Segurança** — cabeçalhos (CSP, HSTS, X-Frame-Options…) em `netlify.toml` `[[headers]]`.
+  Se adicionar script/imagem externa, ajustar a CSP lá.
 
 ## Regras de conteúdo — publicidade advocatícia (OAB)
 
@@ -46,16 +55,17 @@ Se um pedido esbarrar nessas regras, explique em uma linha e proponha alternativ
 
 - **Rode `make check` antes de publicar** — lint + type-check + build. Verde = pode publicar.
 - **Nunca mude o path de uma página já publicada** sem adicionar redirect 301 em `netlify.toml`.
-- **Commits:** Conventional Commits em PT-BR (`feat(areas): ...`, `fix(seo): ...`).
-- **PR obrigatório em `main`** (ruleset): CI `lint · type-check · build` e `lighthouse` precisam
-  passar. Dependabot minor/patch faz auto-merge; major exige revisão.
+- **Imagens:** JPEG q≈80, máx. 1600 px, < 200 KB. Em `src/assets/` (importadas) ou `public/`.
+- **Commits:** Conventional Commits em PT-BR (`feat(conteudo): ...`, `fix(seo): ...`).
+- **PR obrigatório em `main`**: CI `lint · type-check · build` e `lighthouse` precisam passar.
+  Dependabot minor/patch faz auto-merge; major exige revisão.
 
 ## Guardrails — NÃO edite sem revisão técnica
 
 Um hook `PreToolUse` (`.claude/hooks/guard-editor-edits.sh`) bloqueia edição de arquivos de
-config/infra/segurança/SEO numa sessão de conteúdo: `next.config.ts`, `package.json`,
-`src/middleware.ts`, `src/lib/site.ts`, `src/lib/routes.ts`, `.github/`, `.claude/`, etc. Para
-editá-los de propósito (parte técnica), rode uma vez por clone:
+config/infra/segurança/SEO numa sessão de conteúdo: `vite.config.ts`, `package.json`,
+`netlify.toml`, `src/App.tsx`, `src/components/SEO.tsx`, `src/components/ui/`, `.github/`,
+`.claude/`, etc. Para editá-los de propósito (parte técnica), rode uma vez por clone:
 
 ```bash
 touch .claude/.allow-infra   # git-ignored; desliga o guard localmente
@@ -63,27 +73,29 @@ touch .claude/.allow-infra   # git-ignored; desliga o guard localmente
 
 ## CI/CD
 
-| Onde                                         | O quê                                                                                                                       |
-| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `.github/workflows/CI.yml`                   | PR + push em main: `pnpm lint`, `type-check`, `build` (SAST via eslint-plugin-security)                                     |
-| `.github/workflows/lighthouse.yml`           | PR: aguarda o deploy preview da Netlify e audita a11y/best-practices (bloqueia <0.9), SEO/perf (warn) — `lighthouserc.json` |
-| `.github/workflows/dependabot-automerge.yml` | auto-merge de minor/patch do Dependabot                                                                                     |
-| `.github/dependabot.yml`                     | npm + github-actions, semanal, cooldown 7 dias, agrupado minor+patch                                                        |
-| `netlify.toml`                               | build, plugin Next, redirects 301                                                                                           |
+| Onde                                         | O quê                                                                                                 |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `.github/workflows/CI.yml`                   | PR + push em main: `pnpm lint` (SAST via eslint-plugin-security), `type-check`, `build`               |
+| `.github/workflows/lighthouse.yml`           | PR: aguarda o deploy preview da Netlify e audita a11y/best-practices (bloqueia <0.9), SEO/perf (warn) |
+| `.github/workflows/dependabot-automerge.yml` | auto-merge de minor/patch do Dependabot                                                               |
+| `.github/dependabot.yml`                     | npm + github-actions, semanal, cooldown 7 dias, agrupado minor+patch                                  |
+| `netlify.toml`                               | build Vite → `dist`, headers de segurança, SPA fallback, redirects                                    |
 
 ## Fluxo de edição
 
-Para qualquer mudança que o escritório pedir: 1. entenda e confirme o pedido → 2. edite → 3. `make dev` e confira no navegador → 4. `make check` → 5. branch + PR (CI verde) → 6. merge =
-publicado. **Sempre em português simples; nunca edite infra (o guard bloqueia); nunca publique
-com check vermelho.**
+Para qualquer mudança que o escritório pedir: 1. entenda e confirme o pedido → 2. edite → 3. `make dev` (localhost:8080) e confira → 4. `make check` → 5. branch + PR (CI verde) → 6. merge = publicado em ~1 min. **Sempre em português simples; nunca edite infra (o guard
+bloqueia); nunca publique com check vermelho.**
 
-## Pendências de setup (técnico)
+**Claude Design** é só para desenhar peças novas (importando este repo como contexto) e fazer
+_Handoff to Claude Code_. **Nunca** usar o "Deploy to Netlify" do Claude Design no site de
+produção — ele sobrescreve o site com o protótipo.
 
-- [ ] Confirmar domínio em `src/lib/site.ts` e conectar o site na Netlify (deploy previews públicos, senão o job `lighthouse` não roda).
-- [ ] Preencher `address`/`telephone`/OAB no JSON-LD (`src/lib/jsonld.ts`).
-- [ ] Redigir Política de Privacidade (LGPD) com o escritório.
-- [ ] Mapear URLs do site antigo → redirects 301 em `netlify.toml` antes da virada de DNS.
-- [ ] Implementar o blog (MDX + rotas `/blog`, `/blog/<slug>`, JSON-LD `BlogPosting`, sitemap dinâmico).
-- [ ] Criar a skill `/novo-artigo` — fluxo de perguntas próprio para artigo (tema, público, tese,
-  fontes/legislação citada, revisão OAB), **diferente** do `/update-website` do `yhb-website`.
-- [ ] Criar `src/lib/content/site-copy.ts` para textos institucionais.
+## Pendências (técnico)
+
+- [ ] Conectar a Netlify ao repo (build `pnpm build`, publish `dist`); deploy previews públicos.
+- [ ] Netlify → Forms → notificação por e-mail para `secretaria@carmelonunes.com.br`.
+- [ ] Domínio `carmelonunes.com.br` na Netlify + DNS; depois cancelar Lovable.
+- [ ] Preencher CNPJ, nº OAB/SP (Footer e Privacidade) e nome do DPO; criar `privacidade@carmelonunes.com.br`.
+- [ ] Artigos reais: `src/content/artigos/<slug>.md` + rota `/conteudo/<slug>` + JSON-LD `BlogPosting` + sitemap.
+- [ ] Skill `/novo-artigo` (perguntas guiadas: tema, público, tese, fontes/legislação, revisão OAB → cria arquivo, PR).
+- [ ] Rever `public/llms.txt` e `public/placeholder.svg` (herança Lovable).
