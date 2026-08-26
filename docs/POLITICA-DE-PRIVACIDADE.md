@@ -2,7 +2,7 @@
 
 Carmelo Nunes Sociedade de Advogados · Vigência: agosto de 2026
 
-A Carmelo Nunes Sociedade de Advogados ("Carmelo Nunes" ou "Escritório"), inscrita no CNPJ sob o nº [**.**_._**/\____-**] e registrada na OAB/SP sob o nº [_____], com sede na Av. Paulista, 509 — 14º andar, São Paulo/SP, CEP 01310-000, valoriza a privacidade dos clientes, potenciais clientes e demais pessoas que se relacionam com o Escritório, e se compromete a proteger as informações pessoais coletadas durante o uso de nosso site e a prestação de nossos serviços jurídicos, em conformidade com a Lei Geral de Proteção de Dados (LGPD) e com o dever de sigilo profissional que rege a advocacia.
+A Carmelo Nunes Sociedade de Advogados ("Carmelo Nunes" ou "Escritório"), inscrita no CNPJ sob o nº [**.**_._**/\____-**] e registrada na OAB/SP sob o nº [_____], com sede na Av. Paulista, 509 — 14º andar, São Paulo/SP, CEP 01311-000, valoriza a privacidade dos clientes, potenciais clientes e demais pessoas que se relacionam com o Escritório, e se compromete a proteger as informações pessoais coletadas durante o uso de nosso site e a prestação de nossos serviços jurídicos, em conformidade com a Lei Geral de Proteção de Dados (LGPD) e com o dever de sigilo profissional que rege a advocacia.
 
 Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos seus dados pessoais. Ao acessar ou utilizar nosso site, nossos canais de contato ou nossos serviços, você concorda com os termos descritos nesta política.
 

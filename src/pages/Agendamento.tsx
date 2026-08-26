@@ -510,7 +510,7 @@ const Agendamento = () => {
                       <br />
                       Bela Vista — São Paulo — SP
                       <br />
-                      CEP 01310-000
+                      CEP 01311-000
                     </p>
                   </div>
                 </div>

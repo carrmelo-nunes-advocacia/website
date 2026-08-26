@@ -88,7 +88,7 @@ const Index = () => {
               streetAddress: "Av. Paulista, 509 — 14º andar",
               addressLocality: "São Paulo",
               addressRegion: "SP",
-              postalCode: "01310-000",
+              postalCode: "01311-000",
               addressCountry: "BR",
             },
             geo: { "@type": "GeoCoordinates", latitude: -23.5705, longitude: -46.6452 },

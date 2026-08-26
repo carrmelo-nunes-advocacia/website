@@ -31,7 +31,7 @@ const Privacidade = () => (
         <p className="text-muted-foreground leading-relaxed">
           A Carmelo Nunes Sociedade de Advogados ("Carmelo Nunes" ou "Escritório"), inscrita no CNPJ
           sob o nº [__.___.___/____-__] e registrada na OAB/SP sob o nº [_____], com sede na Av.
-          Paulista, 509 — 14º andar, São Paulo/SP, CEP 01310-000, valoriza a privacidade dos
+          Paulista, 509 — 14º andar, São Paulo/SP, CEP 01311-000, valoriza a privacidade dos
           clientes, potenciais clientes e demais pessoas que se relacionam com o Escritório, e se
           compromete a proteger as informações pessoais coletadas durante o uso de nosso site e a
           prestação de nossos serviços jurídicos, em conformidade com a Lei Geral de Proteção de
