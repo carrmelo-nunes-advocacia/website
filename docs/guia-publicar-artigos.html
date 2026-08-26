@@ -83,12 +83,12 @@
     <h2><span class="n">A2</span>Conectar o Claude ao GitHub</h2>
     <ol class="steps">
       <li><span>Abra <strong>claude.ai/code</strong> (não é o chat comum) e entre com a conta do Claude do escritório (plano Pro).</span></li>
-      <li><span>Na primeira vez aparece um botão para conectar o GitHub. Clique, entre na sua conta GitHub e autorize o aplicativo <strong>Claude</strong>.</span></li>
-      <li><span>Se aparecer uma tela de <em>environment</em>, aceite o padrão (<strong>Default</strong>).</span></li>
-      <li><span>Abaixo da caixa de mensagem há um <strong>seletor de repositório</strong>. Escolha <strong>carrmelo-nunes-advocacia / website</strong>.</span></li>
-      <li><span>Ao lado, no seletor de modo, deixe <strong>Accept edits</strong>.</span></li>
+      <li><span>Se aparecer um botão para <strong>conectar o GitHub</strong>, clique e entre com a <strong>sua conta GitHub</strong> (a que aceitou o convite). Autorize o aplicativo <strong>Claude</strong>.</span></li>
+      <li><span><strong>Abaixo da caixa de mensagem</strong> há um seletor de repositório. Clique e escolha <strong>carrmelo-nunes-advocacia / website</strong>. Ao lado, no seletor de modo, deixe <strong>Accept edits</strong>.</span></li>
+      <li><span>Pronto — não há mais nada a instalar: o aplicativo Claude já está instalado na organização pelo Pedro.</span></li>
     </ol>
-    <div class="callout"><p>Se o repositório não aparecer na lista: você ainda não aceitou o convite da organização (A1, passo 3). Aceite e recarregue a página.</p></div>
+    <div class="callout warn"><p><strong>Não use</strong> <em>Settings → Connectors → GitHub Integration</em>: isso é outra coisa (conector do chat) e não faz o repositório aparecer.</p></div>
+    <div class="callout"><p>Se o repositório não aparecer: você ainda não aceitou o convite da organização (A1, passo 3) ou entrou no GitHub com outra conta. Aceite/corrija e recarregue a página.</p></div>
   </section>
 
   <div class="part"><span class="part-label">Parte B · Uso (a cada artigo)</span></div>
@@ -125,7 +125,7 @@
     <ol class="steps">
       <li><span>Depois do "ok", o Claude confere o site (leva ~1 min) e escreve: <em>"Pronto. Clique em Create PR."</em></span></li>
       <li><span>Clique em <span class="btn">Create PR</span>, logo <strong>acima da caixa de mensagem</strong> (ao lado do contador de linhas, ex.: <code>+70 −0</code>).</span></li>
-      <li><span>Só isso. As verificações automáticas rodam (~5 min) e o artigo entra no ar em <strong>carmelonunes.com.br/conteudo/…</strong>. Você recebe um aviso <strong>🚀 Publicado</strong> na página que abrir e por e-mail do GitHub.</span></li>
+      <li><span>Abre a página do pedido no GitHub. Em ~2 min aparece ali um comentário <strong>👀 Prévia pronta</strong> com um link para ver como ficou. As verificações rodam (~5 min) e o artigo entra no ar em <strong>carmelonunes.com.br/conteudo/…</strong>; você recebe o aviso <strong>🚀 Publicado</strong> na mesma página e por e-mail.</span></li>
     </ol>
     <p>Você pode fechar a aba depois de clicar; a publicação continua sozinha.</p>
   </section>
@@ -142,7 +142,7 @@
         </tbody>
       </table>
     </div>
-    <p style="margin-top:12px">Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (texto de página, foto, sócio novo, menu) o Claude também faz, mas o site <strong>não publica automaticamente</strong> — o Pedro revisa e aprova.</p>
+    <p style="margin-top:12px">Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (layout, texto de página, foto, sócio novo, menu) o Claude também faz — e você também clica em <strong>Create PR</strong> e recebe o link de <strong>prévia</strong> — mas o site <strong>não publica automaticamente</strong>: o Pedro revisa a prévia e aprova.</p>
   </section>
 
   <section>

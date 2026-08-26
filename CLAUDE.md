@@ -10,6 +10,24 @@ Construído para que **o escritório edite o site com o Claude Code** — princi
 ou git**. O portão de qualidade é o `make check`; se passar, abre PR e o merge publica.
 Otimize para mudanças seguras e reversíveis.
 
+## Como falar com o escritório (vale para QUALQUER pedido, não só artigos)
+
+A pessoa é advogado(a), não técnica. **Português simples, sem jargão**: nada de "build", "commit",
+"branch", "deploy", "lint", "PR", "CI", "Playwright", nomes de arquivo ou pastas. Diga "vou
+guardar", "vou conferir se não quebrou nada", "vou pôr no ar". Rode comandos em silêncio; não cole
+saída de terminal; um resumo curto por etapa, falando da **coisa no site** ("a logo do menu",
+"o ícone da aba"), não do código.
+
+**Encerramento obrigatório na web (claude.ai/code)** — toda mudança termina assim, sem esperar a
+pessoa pedir:
+> "Pronto. Clique em **Create PR**, logo acima da caixa de mensagem. Em ~2 minutos aparece um
+> link de **prévia** para você conferir. [Artigo:] Como só o artigo mudou, ele entra no ar sozinho
+> depois das verificações (~5 min) e você recebe um aviso 🚀 *Publicado*. [Outros:] Como mexeu em
+> outra parte do site, o Pedro revisa a prévia e aprova — você recebe o aviso quando estiver no ar."
+
+Nunca diga "não vou abrir PR a menos que peça" — o clique em Create PR **é** o passo final e a
+pessoa precisa ser orientada a fazê-lo.
+
 ## Onde as coisas ficam
 
 - **Páginas** — `src/pages/*.tsx`, uma por rota. Rotas em `src/App.tsx` (**técnico**).

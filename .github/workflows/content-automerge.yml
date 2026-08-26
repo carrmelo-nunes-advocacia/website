@@ -49,10 +49,28 @@ jobs:
           links=$(printf '%s\n' "$files" | grep -E '^src/content/artigos/[^_].*\.md$' | sed -E 's#src/content/artigos/(.*)\.md#- https://carmelonunes.com.br/conteudo/\1#' || true)
           { echo "links<<EOF"; echo "$links"; echo "EOF"; } >> "$GITHUB_OUTPUT"
 
+      - name: Link de prévia (Netlify)
+        id: preview
+        run: |
+          sha=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq .headRefOid)
+          url=""
+          for i in $(seq 1 45); do
+            url=$(gh api "repos/$GITHUB_REPOSITORY/commits/$sha/statuses" --jq '.[] | select(.context|test("deploy-preview")) | select(.state=="success") | .target_url' 2>/dev/null | head -1)
+            [ -n "$url" ] && break; sleep 20
+          done
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          if [ -n "$url" ]; then
+            if [ "${{ steps.scope.outputs.ok }}" = "true" ]; then
+              gh pr comment "$PR_URL" --body "👀 **Prévia pronta:** $url — é assim que vai ficar. A publicação segue automática."
+            else
+              gh pr comment "$PR_URL" --body "👀 **Prévia pronta:** $url — confira como ficou. Como esta mudança vai além de artigos, o Pedro revisa e aprova a publicação; você recebe o aviso aqui quando estiver no ar."
+            fi
+          fi
+
       - name: Fora do escopo
         if: steps.scope.outputs.ok != 'true'
         run: |
-          gh pr comment "$PR_URL" --body "ℹ️ Este PR altera arquivos fora de \`src/content/artigos/\`. Precisa de revisão técnica antes de publicar (sem auto-merge)."
+          gh pr comment "$PR_URL" --body "ℹ️ Esta mudança vai além de artigos (layout, textos de página, fotos…). Ela **não publica sozinha**: o Pedro revisa a prévia e aprova. Nada a fazer por aqui."
 
       - name: Avisar que vai publicar sozinho
         if: steps.scope.outputs.ok == 'true'
