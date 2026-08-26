@@ -16,16 +16,24 @@ mostre o **texto** do artigo para ele aprovar.
 
 ## 1. Entender o artigo (perguntar só o que faltar)
 
-Pergunte de uma vez, em lista curta:
+**Pergunte em texto simples, numa única mensagem, como lista numerada.** Não use a ferramenta
+de formulário de perguntas (AskUserQuestion): ela limita a 4 opções e as categorias são 5, o que
+gera erro. O usuário responde em texto livre.
 
-1. **Tema e tese** — sobre o que é e qual a mensagem central em uma frase?
-2. **Categoria** — uma de: Conflitos entre Sócios · Contratos Empresariais · Planejamento
-   Sucessório · Governança Empresarial · Investimentos Imobiliários.
-3. **Autor** — qual sócio assina (nome + OAB)?
-4. **Texto** — ele já tem o texto pronto (colar) ou quer que eu redija a partir de um rascunho/
-   tópicos? Se redigir: público-alvo (empresário, sócio, investidor, família empresária) e
-   tamanho (curto ≈ 500 palavras · médio ≈ 900 · longo ≈ 1.400).
-5. **Fontes** — legislação, súmulas ou decisões a citar (opcional).
+Modelo da mensagem:
+
+> Para escrever o artigo, me diga:
+> 1. **Tema e mensagem central** — sobre o que é e qual a ideia principal, em uma frase.
+> 2. **Categoria** — Conflitos entre Sócios · Contratos Empresariais · Planejamento Sucessório ·
+>    Governança Empresarial · Investimentos Imobiliários.
+> 3. **Autor** — nome do sócio que assina e número da OAB.
+> 4. **Texto** — você já tem o texto pronto (cole aqui) ou quer que eu redija? Se eu redigir:
+>    para quem é (empresário, sócio, investidor, família empresária) e tamanho (curto ≈ 500
+>    palavras · médio ≈ 900 · longo ≈ 1.400).
+> 5. **Fontes** (opcional) — leis, artigos de lei, súmulas ou decisões a citar.
+
+Se a resposta vier incompleta, pergunte só o que faltou. Se a categoria não bater exatamente com
+uma das cinco, proponha a mais próxima e confirme.
 
 ## 2. Escrever / revisar
 
