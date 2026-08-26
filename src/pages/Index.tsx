@@ -91,7 +91,7 @@ const Index = () => {
               postalCode: "01311-000",
               addressCountry: "BR",
             },
-            geo: { "@type": "GeoCoordinates", latitude: -23.5705, longitude: -46.6452 },
+            geo: { "@type": "GeoCoordinates", latitude: -23.56838, longitude: -46.64879 },
             areaServed: { "@type": "Country", name: "Brasil" },
             knowsAbout: [
               "Direito Empresarial",

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
 import Section from "@/components/Section";
 import SEO from "@/components/SEO";
+import MapaEscritorio from "@/components/MapaEscritorio";
 import { toast } from "sonner";
 import { submitNetlifyForm } from "@/lib/netlify-forms";
 
@@ -529,6 +530,7 @@ const Agendamento = () => {
                   conforme as normas da OAB e a Lei Geral de Proteção de Dados.
                 </p>
               </div>
+              <MapaEscritorio />
             </aside>
           </div>
         )}
