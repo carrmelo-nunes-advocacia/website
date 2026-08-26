@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Escritorio = lazy(() => import("./pages/Escritorio"));
 const Atuacao = lazy(() => import("./pages/Atuacao"));
@@ -40,6 +41,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Suspense fallback={<Loading />}>
             <Routes>
               <Route path="/" element={<Index />} />

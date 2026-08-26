@@ -57,12 +57,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-primary/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
           <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} Carmelo Nunes Sociedade de Advogados. Todos os direitos
             reservados.
           </p>
-          <p className="text-muted-foreground text-xs flex items-center gap-3">
+          <p className="text-muted-foreground text-xs flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
             <span>OAB/SP nº ____ • Advocacia responsável</span>
             <span aria-hidden="true">·</span>
             <Link to="/privacidade" className="hover:text-primary transition-colors">

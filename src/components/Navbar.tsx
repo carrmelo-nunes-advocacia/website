@@ -62,7 +62,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground/70 hover:text-foreground p-2"
+          className="md:hidden ml-auto text-foreground/70 hover:text-foreground p-2"
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
         >
           {isOpen ? <X size={20} strokeWidth={1} /> : <Menu size={20} strokeWidth={1} />}
