@@ -28,23 +28,31 @@ Mostre à pessoa **o texto do artigo**, não código.
 
 ## 1. Entender o artigo (perguntar só o que faltar)
 
-**Pergunte em texto simples, numa única mensagem, como lista numerada.** Não use a ferramenta de
-formulário de perguntas (AskUserQuestion): ela limita a 4 opções e as categorias são 5. A pessoa
-responde em texto livre.
+Duas rodadas, sempre curtas:
 
-> Para escrever o artigo, me diga:
-> 1. **Tema e mensagem central** — sobre o que é e qual a ideia principal, em uma frase.
-> 2. **Categoria** — Conflitos entre Sócios · Contratos Empresariais · Planejamento Sucessório ·
->    Governança Empresarial · Investimentos Imobiliários.
-> 3. **Autor** — nome do sócio que assina e número da OAB.
-> 4. **Texto** — você já tem o texto pronto (cole aqui) ou quer que eu redija? Se eu redigir:
->    para quem é (empresário, sócio, investidor, família empresária) e tamanho (curto ≈ 500
->    palavras · médio ≈ 900 · longo ≈ 1.400).
-> 5. **Fontes** (opcional) — leis, artigos de lei, súmulas ou decisões a citar.
+**1a. Tema e fontes — em texto**, uma mensagem só:
 
-Se vier incompleto, pergunte só o que faltou. Se a categoria não bater com uma das cinco, proponha
-a mais próxima e confirme. Se o pedido for **alterar** ou **remover** um artigo existente, pule
-para o passo correspondente em "Outros pedidos".
+> "Sobre o que é o artigo e qual a mensagem central, em uma frase? Se quiser citar leis, artigos
+> de lei, resoluções ou decisões, me diga também (opcional)."
+
+Se o pedido inicial já trouxe o tema, pule 1a — só confirme em meia linha.
+
+**1b. Escolhas — com o formulário clicável (AskUserQuestion)**, em uma única chamada com até 4
+perguntas. **Limites da ferramenta: 2 a 4 opções por pergunta** (o "Outra" aparece sozinho).
+Marque como *(Recomendada)* a opção que você inferiu do tema e coloque-a primeiro.
+
+1. **Categoria** — mostre as 4 mais prováveis para o tema; a quinta fica acessível por "Outra".
+   As cinco: Conflitos entre Sócios · Contratos Empresariais · Planejamento Sucessório ·
+   Governança Empresarial · Investimentos Imobiliários.
+2. **Autor** — "Carlos Carmelo Nunes" · "Frederico Augusto Cavalheiro e Carmelo Nunes" ·
+   "Carmelo Nunes Sociedade de Advogados (sem assinatura individual)". Depois peça o nº da OAB
+   em texto se ainda não souber (guarde-o: da próxima vez, ofereça como opção).
+3. **Texto** — "Redija para mim — médio (≈900 palavras)" · "Redija — curto (≈500)" ·
+   "Redija — longo (≈1.400)" · "Eu tenho o texto pronto (vou colar)".
+4. **Público** — "Empresário em geral" · "Sócios de empresa" · "Investidor" · "Família empresária".
+
+Se a pessoa escolher "Eu tenho o texto pronto", peça para colar. Se responder em texto livre em
+vez de clicar, aceite normalmente. Não repita perguntas já respondidas.
 
 ## 2. Escrever / revisar
 
