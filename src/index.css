@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 212 43% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 18% 13%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 18% 13%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 38 48% 59%;
+    --primary-foreground: 212 43% 10%;
+
+    --secondary: 210 18% 15%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 210 18% 15%;
+    --muted-foreground: 210 20% 78%;
+
+    --accent: 38 48% 59%;
+    --accent-foreground: 212 43% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 48% 59%;
+    --input: 210 18% 20%;
+    --ring: 38 48% 59%;
+
+    --radius: 12px;
+
+    --sidebar-background: 210 18% 8%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 38 48% 59%;
+    --sidebar-primary-foreground: 212 43% 10%;
+    --sidebar-accent: 210 18% 15%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 210 18% 20%;
+    --sidebar-ring: 38 48% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border/20;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Card depth shadow */
+.card-shadow {
+  box-shadow:
+    0 0 0 1px hsla(38, 48%, 59%, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-shadow-hover {
+  box-shadow:
+    0 0 0 1px hsla(38, 48%, 59%, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Watermark monogram */
+.watermark-nn {
+  position: relative;
+  overflow: hidden;
+}
+.watermark-nn::before {
+  content: "";
+  position: absolute;
+  width: 20rem;
+  height: 8rem;
+  background-image: url("/logo-cn.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(212, 43%, 10%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(38, 48%, 59%, 0.3);
+  border-radius: 3px;
+}
+
+/* Focus styles — WCAG 2.2 AA (2.4.7, 2.4.11, 2.4.13) */
+*:focus-visible {
+  outline: 2px solid hsl(38, 48%, 65%);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: hsl(38, 48%, 59%);
+  color: hsl(212, 43%, 10%);
+  font-weight: 600;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+  left: 0;
+}

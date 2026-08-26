@@ -30,14 +30,14 @@ rel="$file"
 block=0
 case "$rel" in
   # Config / build / infra
-  next.config.ts|tsconfig.json|eslint.config.mjs|Makefile|netlify.toml) block=1 ;;
-  package.json|pnpm-lock.yaml|.nvmrc|.npmrc) block=1 ;;
-  # Segurança (CSP/headers por request)
-  src/middleware.ts) block=1 ;;
-  # SEO estrutural
-  src/lib/site.ts|src/lib/routes.ts|src/lib/jsonld.ts|src/app/robots.ts|src/app/sitemap.ts) block=1 ;;
+  vite.config.ts|tsconfig*.json|eslint.config.js|tailwind.config.ts|postcss.config.js|components.json|Makefile|netlify.toml|lighthouserc.json) block=1 ;;
+  package.json|pnpm-lock.yaml|.nvmrc|.npmrc|.prettierrc|.prettierignore|index.html) block=1 ;;
+  # SEO estrutural, formulários e roteamento
+  src/App.tsx|src/main.tsx|src/components/SEO.tsx|src/lib/netlify-forms.ts|public/__forms.html|public/robots.txt|public/sitemap.xml) block=1 ;;
+  # Biblioteca de componentes base (shadcn) — não é conteúdo
+  src/components/ui/*) block=1 ;;
   # CI/deploy e o próprio harness
-  .github/*|.claude/*) block=1 ;;
+  .github/*|.claude/*|docs/*) block=1 ;;
 esac
 
 if [ "$block" = "1" ]; then

@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- Somente para a Netlify detectar os formulários no deploy. Não é servido aos usuários. -->
+<html>
+  <body>
+    <form
+      name="contato"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/obrigado"
+    >
+      <input type="hidden" name="form-name" value="contato" />
+      <input name="bot-field" /><input name="nome" /><input name="email" /><input
+        name="telefone"
+      /><textarea name="mensagem"></textarea>
+    </form>
+    <form
+      name="agendamento"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/obrigado"
+    >
+      <input type="hidden" name="form-name" value="agendamento" />
+      <input name="bot-field" /><input name="nome" /><input name="email" /><input
+        name="telefone"
+      /><input name="empresa" /> <input name="assunto" /><input name="outroAssunto" /><input
+        name="urgencia"
+      /><input name="preferencia" /> <textarea name="mensagem"></textarea
+      ><input name="consentimento" />
+    </form>
+  </body>
+</html>
