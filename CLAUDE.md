@@ -82,10 +82,17 @@ touch .claude/.allow-infra   # git-ignored; desliga o guard localmente
 | `.github/workflows/CI.yml`                   | PR + push em main: `pnpm lint` (SAST via eslint-plugin-security), `type-check`, `build`               |
 | `.github/workflows/lighthouse.yml`           | PR: aguarda o deploy preview da Netlify e audita a11y/best-practices (bloqueia <0.9), SEO/perf (warn) |
 | `.github/workflows/dependabot-automerge.yml` | auto-merge de minor/patch do Dependabot                                                               |
+| `.github/workflows/content-automerge.yml`    | PR que só toca `src/content/artigos/*.md` → auto-merge quando os checks passam (fluxo web "1 clique") |
 | `.github/dependabot.yml`                     | npm + github-actions, semanal, cooldown 7 dias, agrupado minor+patch                                  |
 | `netlify.toml`                               | build Vite → `dist`, headers de segurança, SPA fallback, redirects                                    |
 
 ## Fluxo de edição
+
+**Dois ambientes.** O escritório usa **Claude Code na web** (claude.ai/code): sem instalação, o
+repo já conectado; ao final clica em *Create PR* e, se só alterou artigos, o merge é automático
+(`content-automerge.yml`). Hooks de `.claude/settings.json` **não rodam na web** — o portão ali é
+a ruleset da `main` (CI + Lighthouse) e o auto-merge restrito por caminho. O terminal é para a
+parte técnica (Pedro).
 
 Para qualquer mudança que o escritório pedir: 1. entenda e confirme o pedido → 2. edite → 3. `make dev` (localhost:8080) e confira → 4. `make check` → 5. branch + PR (CI verde) → 6. merge = publicado em ~1 min. **Sempre em português simples; nunca edite infra (o guard
 bloqueia); nunca publique com check vermelho.**
