@@ -29,8 +29,8 @@ Otimize para mudanças seguras e reversíveis.
   (telefone, endereço, OAB, link da Privacidade). WhatsApp: `src/components/WhatsAppButton.tsx`.
 - **SEO por página** — cada página renderiza `<SEO title description canonical jsonLd />`
   (`src/components/SEO.tsx`, **técnico**). Home tem JSON-LD `LegalService`. `public/sitemap.xml`
-  é **gerado no build** por `scripts/gen-sitemap.mjs` (rotas fixas + artigos) — não editar à
-  mão; **adicionar página = rota em `App.tsx` + entrada em `FIXED` do script.**
+  é **gerado no build** por `scripts/gen-sitemap.mjs` (rotas fixas + artigos) e **não é versionado**
+  (`.gitignore`); **adicionar página = rota em `App.tsx` + entrada em `FIXED` do script.**
 - **Formulários** — `/contato` e `/agendamento` enviam via **Netlify Forms**
   (`src/lib/netlify-forms.ts`; detecção via `public/__forms.html`). Adicionar campo = nos dois
   lugares. Notificações por e-mail configuradas no painel da Netlify.
@@ -83,6 +83,7 @@ touch .claude/.allow-infra   # git-ignored; desliga o guard localmente
 | `.github/workflows/lighthouse.yml`           | PR: aguarda o deploy preview da Netlify e audita a11y/best-practices (bloqueia <0.9), SEO/perf (warn) |
 | `.github/workflows/dependabot-automerge.yml` | auto-merge de minor/patch do Dependabot                                                               |
 | `.github/workflows/content-automerge.yml`    | PR que só toca `src/content/artigos/*.md` → auto-merge quando os checks passam (fluxo web "1 clique") |
+| `.github/workflows/publicado.yml`            | após merge na main, comenta no PR "🚀 Publicado" com o link do artigo                                 |
 | `.github/dependabot.yml`                     | npm + github-actions, semanal, cooldown 7 dias, agrupado minor+patch                                  |
 | `netlify.toml`                               | build Vite → `dist`, headers de segurança, SPA fallback, redirects                                    |
 

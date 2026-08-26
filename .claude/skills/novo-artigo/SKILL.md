@@ -56,6 +56,8 @@ Crie `src/content/artigos/<slug>.md` com o frontmatter do template (`title`, `de
 ## 4. Conferir
 
 - `make check` — precisa passar. Se falhar, corrija (geralmente frontmatter) e repita.
+- `git status` deve mostrar **só** o novo `.md`. `public/sitemap.xml` é gerado e ignorado pelo git;
+  se aparecer outro arquivo alterado, não o inclua no commit.
 - Opcional, se o usuário quiser ver: `make dev` → http://localhost:8080/conteudo/<slug>.
 
 ## 5. Publicar
@@ -67,7 +69,8 @@ existe `gh` (Claude Code na web / claude.ai/code), é **web**.
 1. Commit na branch da sessão: `git add src/content/artigos/<slug>.md && git commit -m "feat(conteudo): novo artigo — <título curto>"`.
 2. Diga ao usuário, exatamente: **"Pronto. Clique em *Create PR* no topo da tela. Como só o
    artigo foi alterado, a publicação é automática: em cerca de 5 minutos ele estará em
-   https://carmelonunes.com.br/conteudo/<slug>."**
+   https://carmelonunes.com.br/conteudo/<slug>. Você receberá um comentário 🚀 *Publicado* no
+   PR (e por e-mail do GitHub) quando estiver no ar."**
 3. Não tente abrir PR nem fazer merge por comando — a automação (`content-automerge.yml`)
    cuida do merge quando os checks ficarem verdes.
 
