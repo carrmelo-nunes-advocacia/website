@@ -15,3 +15,6 @@ npm-debug.log*
 
 # netlify CLI local
 .netlify
+
+# gerado no build por scripts/gen-sitemap.mjs
+public/sitemap.xml
