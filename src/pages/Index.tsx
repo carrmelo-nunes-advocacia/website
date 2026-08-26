@@ -196,7 +196,12 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="mt-10"
             >
-              <Button variant="gold" size="xl" asChild>
+              <Button
+                variant="gold"
+                size="xl"
+                asChild
+                className="w-full sm:w-auto max-w-full whitespace-normal text-center px-6 sm:px-10 text-sm sm:text-base h-auto min-h-14 py-3"
+              >
                 <Link to="/agendamento">Agendar Conversa Estratégica</Link>
               </Button>
             </motion.div>
