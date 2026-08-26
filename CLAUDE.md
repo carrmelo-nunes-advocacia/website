@@ -95,7 +95,11 @@ repo já conectado; ao final clica em *Create PR* e, se só alterou artigos, o m
 a ruleset da `main` (CI + Lighthouse) e o auto-merge restrito por caminho. O terminal é para a
 parte técnica (Pedro).
 
-Para qualquer mudança que o escritório pedir: 1. entenda e confirme o pedido → 2. edite → 3. `make dev` (localhost:8080) e confira → 4. `make check` → 5. branch + PR (CI verde) → 6. merge = publicado em ~1 min. **Sempre em português simples; nunca edite infra (o guard
+**Qualquer pedido sobre artigo/blog/Conteúdo** ("adicionar artigo", "postar no blog", "publicar") entra
+pela skill `/novo-artigo` mesmo sem o comando — o hook `route-novo-artigo.sh` lembra isso no
+terminal; na web, siga esta regra por conta própria.
+
+Para qualquer outra mudança que o escritório pedir: 1. entenda e confirme o pedido → 2. edite → 3. `make dev` (localhost:8080) e confira → 4. `make check` → 5. branch + PR (CI verde) → 6. merge = publicado em ~1 min. **Sempre em português simples; nunca edite infra (o guard
 bloqueia); nunca publique com check vermelho.**
 
 **Claude Design** é só para desenhar peças novas (importando este repo como contexto) e fazer
