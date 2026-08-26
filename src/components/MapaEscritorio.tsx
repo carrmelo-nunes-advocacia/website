@@ -3,12 +3,14 @@ import { ExternalLink } from "lucide-react";
 // Mapa do escritório (Av. Paulista, 509 — Bela Vista, São Paulo).
 // Usa OpenStreetMap em vez do Google Maps: sem cookies de rastreamento, coerente com a
 // Política de Privacidade. Os botões abrem o app de mapas do visitante fora do site.
-const LAT = -23.5705;
-const LON = -46.6452;
+// Edifício Patrimônio, Av. Paulista 509 (geocodificado em 2026-08-26, OSM/Nominatim).
+const LAT = -23.56838;
+const LON = -46.64879;
+const ENDERECO = "Av. Paulista, 509 - Bela Vista, São Paulo - SP, 01311-000";
 const D = 0.004; // ~400 m de raio
 const OSM_EMBED = `https://www.openstreetmap.org/export/embed.html?bbox=${LON - D}%2C${LAT - D}%2C${LON + D}%2C${LAT + D}&layer=mapnik&marker=${LAT}%2C${LON}`;
-const GOOGLE = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Av. Paulista, 509, Bela Vista, São Paulo - SP")}`;
-const WAZE = `https://waze.com/ul?ll=${LAT},${LON}&navigate=yes`;
+const GOOGLE = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ENDERECO)}`;
+const WAZE = `https://waze.com/ul?q=${encodeURIComponent(ENDERECO)}&ll=${LAT}%2C${LON}&navigate=yes`;
 
 const MapaEscritorio = () => (
   <div className="card-shadow rounded-lg bg-card overflow-hidden">
