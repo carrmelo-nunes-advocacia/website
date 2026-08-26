@@ -17,16 +17,20 @@ Otimize para mudanças seguras e reversíveis.
   `/agendamento`, `/privacidade`, 404.
 - **Áreas de atuação** — cada uma é uma página (`DireitoEmpresarial.tsx`, …) que usa o
   componente `src/components/AreaPage.tsx`. Textos ficam dentro de cada página.
-- **Conteúdo / artigos (o conteúdo recorrente)** — hoje `src/pages/Conteudo.tsx` tem o array
-  `articles` com 6 placeholders (`slug: "#"`). **Pendente:** estrutura real de artigos
-  (ver Pendências). Categorias fixas: Conflitos entre Sócios, Contratos Empresariais,
-  Planejamento Sucessório, Governança Empresarial, Investimentos Imobiliários.
+- **Conteúdo / artigos (o conteúdo recorrente)** — um arquivo Markdown por artigo em
+  `src/content/artigos/<slug>.md` (frontmatter: `title`, `description`, `category`, `date`,
+  `author`, `authorOab`; modelo em `_template.md`). Carregados por `src/lib/artigos.ts`
+  (`import.meta.glob` + `marked`), listados em `/conteudo` (`Conteudo.tsx`, filtro por
+  categoria) e renderizados em `/conteudo/<slug>` (`Artigo.tsx`, JSON-LD `BlogPosting`).
+  **Publicar artigo = criar o `.md`** — a skill `/novo-artigo` faz o fluxo inteiro.
+  Categorias fixas em `CATEGORIAS`. Arquivos que começam com `_` são ignorados.
 - **Sócios, história, princípios** — `src/pages/Escritorio.tsx`. Fotos em `src/assets/`.
 - **Navegação e rodapé** — `src/components/Navbar.tsx`, `src/components/Footer.tsx`
   (telefone, endereço, OAB, link da Privacidade). WhatsApp: `src/components/WhatsAppButton.tsx`.
 - **SEO por página** — cada página renderiza `<SEO title description canonical jsonLd />`
-  (`src/components/SEO.tsx`, **técnico**). Home tem JSON-LD `LegalService`. Sitemap e robots
-  estáticos em `public/` — **adicionar página = rota em `App.tsx` + URL em `public/sitemap.xml`.**
+  (`src/components/SEO.tsx`, **técnico**). Home tem JSON-LD `LegalService`. `public/sitemap.xml`
+  é **gerado no build** por `scripts/gen-sitemap.mjs` (rotas fixas + artigos) — não editar à
+  mão; **adicionar página = rota em `App.tsx` + entrada em `FIXED` do script.**
 - **Formulários** — `/contato` e `/agendamento` enviam via **Netlify Forms**
   (`src/lib/netlify-forms.ts`; detecção via `public/__forms.html`). Adicionar campo = nos dois
   lugares. Notificações por e-mail configuradas no painel da Netlify.
@@ -94,8 +98,7 @@ produção — ele sobrescreve o site com o protótipo.
 
 - [ ] Conectar a Netlify ao repo (build `pnpm build`, publish `dist`); deploy previews públicos.
 - [ ] Netlify → Forms → notificação por e-mail para `secretaria@carmelonunes.com.br`.
-- [ ] Domínio `carmelonunes.com.br` na Netlify + DNS; depois cancelar Lovable.
-- [ ] Preencher CNPJ, nº OAB/SP (Footer e Privacidade) e nome do DPO; criar `privacidade@carmelonunes.com.br`.
-- [ ] Artigos reais: `src/content/artigos/<slug>.md` + rota `/conteudo/<slug>` + JSON-LD `BlogPosting` + sitemap.
-- [ ] Skill `/novo-artigo` (perguntas guiadas: tema, público, tese, fontes/legislação, revisão OAB → cria arquivo, PR).
+- [ ] Domínio `carmelonunes.com.br` (HostGator) → Netlify + DNS, só após validação completa; redirects 301 do WordPress já em `netlify.toml`.
+- [ ] Preencher CNPJ, nº OAB/SP (Footer e Privacidade) e nome do DPO; criar `privacidade@carmelonunes.com.br`. (Site antigo não tem esses dados — pedir ao escritório.)
+- [ ] Primeiro artigo real (hoje `/conteudo` mostra "Em breve") — via `/novo-artigo`.
 - [ ] Rever `public/llms.txt` e `public/placeholder.svg` (herança Lovable).

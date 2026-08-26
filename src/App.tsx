@@ -15,6 +15,7 @@ const AssessoriaJuridica = lazy(() => import("./pages/AssessoriaJuridica"));
 const PlanejamentoSucessorio = lazy(() => import("./pages/PlanejamentoSucessorio"));
 const InvestimentosImobiliarios = lazy(() => import("./pages/InvestimentosImobiliarios"));
 const Conteudo = lazy(() => import("./pages/Conteudo"));
+const Artigo = lazy(() => import("./pages/Artigo"));
 const Contato = lazy(() => import("./pages/Contato"));
 const Agendamento = lazy(() => import("./pages/Agendamento"));
 const Privacidade = lazy(() => import("./pages/Privacidade"));
@@ -65,6 +66,7 @@ const App = () => (
                 element={<InvestimentosImobiliarios />}
               />
               <Route path="/conteudo" element={<Conteudo />} />
+              <Route path="/conteudo/:slug" element={<Artigo />} />
               <Route path="/contato" element={<Contato />} />
               <Route path="/agendamento" element={<Agendamento />} />
               <Route path="/privacidade" element={<Privacidade />} />

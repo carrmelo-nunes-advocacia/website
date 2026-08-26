@@ -52,7 +52,7 @@ const Footer = () => {
               </a>
               <p>Av. Paulista, 509 — 14º andar</p>
               <p>Bela Vista — São Paulo — SP</p>
-              <p>CEP 01310-000</p>
+              <p>CEP 01311-000</p>
             </div>
           </div>
         </div>
