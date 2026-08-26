@@ -38,9 +38,9 @@ Parte B · Uso (a cada artigo)
 
 - Em **claude.ai/code**, confira que o repositório **website** está selecionado.
 
-- Digite `/novo-artigo` e envie.
+- Escreva o que quer, em português normal — por exemplo: *"quero adicionar um artigo no blog sobre acordo de sócios em PMEs"*. (Também funciona digitar `/novo-artigo`.)
 
-- O Claude faz cinco perguntas numa lista: tema e mensagem central, categoria, quem assina (nome e OAB), se você já tem o texto ou quer que ele redija, e fontes. Responda tudo numa mensagem só, em português normal. Se já tiver o texto, cole inteiro.
+- O Claude confirma o tema e abre um **menu de opções** para você clicar: categoria, quem assina, se ele redige (curto, médio ou longo) ou se você cola o texto pronto, e para quem é o artigo. Depois, se precisar, pede o número da OAB e as fontes em texto.
 
 ### Exemplo de resposta
 
@@ -66,9 +66,9 @@ Parte B · Uso (a cada artigo)
 
 - Depois do "ok", o Claude confere o site (leva ~1 min) e escreve: *"Pronto. Clique em Create PR."*
 
-- Clique em **Create PR**, na barra inferior da tela (ao lado do contador `+70 −0`).
+- Clique em **Create PR**, logo **acima da caixa de mensagem** (ao lado do contador de linhas, ex.: `+70 −0`).
 
-- Só isso. As verificações automáticas rodam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**. O Claude te dá o link exato — abra e confira.
+- Só isso. As verificações automáticas rodam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**. Você recebe um aviso **🚀 Publicado** na página que abrir e por e-mail do GitHub.
 
 Você pode fechar a aba depois de clicar; a publicação continua sozinha.
 
@@ -79,7 +79,7 @@ Você pode fechar a aba depois de clicar; a publicação continua sozinha.
 
 | Corrigir um artigo publicado | *"No artigo <título>, troque … por …"* → ok → Create PR |
 
-| Tirar um artigo do ar | *"Remova o artigo <título>"* → Create PR |
+| Tirar um artigo do ar | *"Remova o artigo <título>"* → ok → Create PR |
 
 | Ver a lista de artigos | *"Quais artigos estão publicados?"* |
 
