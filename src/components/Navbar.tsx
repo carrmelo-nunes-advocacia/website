@@ -21,7 +21,7 @@ const Navbar = () => {
       <nav className="container mx-auto flex items-center h-16 md:h-20 px-4 lg:px-8">
         {/* Logo centered between left margin and nav items */}
         <div className="hidden md:flex items-center flex-1">
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center md:pl-16 lg:pl-24">
             <Link to="/" className="flex items-center gap-3" aria-label="Página inicial">
               <img
                 src={logoCN}
