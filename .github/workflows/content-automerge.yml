@@ -1,9 +1,11 @@
 name: Auto-merge de conteúdo
 
-# Publicação "1 clique" para quem edita pela web (claude.ai/code): se o PR só toca
-# artigos em src/content/artigos/, habilita o auto-merge do GitHub. O merge só acontece
-# quando os checks obrigatórios da ruleset (CI + Lighthouse) ficarem verdes.
-# Qualquer arquivo fora desse caminho → sem auto-merge → revisão técnica.
+# Publicação "1 clique" para quem edita pela web (claude.ai/code): se o PR só toca artigos em
+# src/content/artigos/, espera os checks obrigatórios (CI + Lighthouse), faz o merge e comenta
+# "🚀 Publicado" com o link. Qualquer arquivo fora desse caminho → sem auto-merge → revisão técnica.
+#
+# Por que mesclar aqui em vez de `gh pr merge --auto`: merges feitos pelo GITHUB_TOKEN não disparam
+# outras workflows, então um job separado "pós-merge" nunca rodaria. Tudo acontece neste job.
 
 on:
   pull_request:
@@ -13,17 +15,23 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   automerge:
     name: auto-merge (artigos)
     if: github.actor != 'dependabot[bot]' && github.event.pull_request.draft == false
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR: ${{ github.event.pull_request.number }}
+      PR_URL: ${{ github.event.pull_request.html_url }}
     steps:
       - name: Só artigos?
         id: scope
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR: ${{ github.event.pull_request.number }}
         run: |
           files=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json files --jq '.files[].path')
           echo "$files"
@@ -38,16 +46,47 @@ jobs:
           done <<< "$files"
           [ -n "$files" ] || ok=false
           echo "ok=$ok" >> "$GITHUB_OUTPUT"
-      - name: Habilitar auto-merge
-        if: steps.scope.outputs.ok == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr merge --auto --squash "${{ github.event.pull_request.html_url }}"
-          gh pr comment "${{ github.event.pull_request.html_url }}" --body "✅ Só artigos alterados: publicação automática habilitada. Assim que os checks ficarem verdes, o artigo vai ao ar (≈2 min depois)."
+          links=$(printf '%s\n' "$files" | grep -E '^src/content/artigos/[^_].*\.md$' | sed -E 's#src/content/artigos/(.*)\.md#- https://carmelonunes.com.br/conteudo/\1#' || true)
+          { echo "links<<EOF"; echo "$links"; echo "EOF"; } >> "$GITHUB_OUTPUT"
+
       - name: Fora do escopo
         if: steps.scope.outputs.ok != 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr comment "${{ github.event.pull_request.html_url }}" --body "ℹ️ Este PR altera arquivos fora de \`src/content/artigos/\`. Precisa de revisão técnica antes de publicar (sem auto-merge)."
+          gh pr comment "$PR_URL" --body "ℹ️ Este PR altera arquivos fora de \`src/content/artigos/\`. Precisa de revisão técnica antes de publicar (sem auto-merge)."
+
+      - name: Avisar que vai publicar sozinho
+        if: steps.scope.outputs.ok == 'true'
+        run: |
+          gh pr comment "$PR_URL" --body "✅ Só artigos alterados: publicação automática habilitada. Assim que as verificações passarem, o merge acontece sozinho e eu aviso aqui."
+
+      - name: Esperar CI e Lighthouse
+        if: steps.scope.outputs.ok == 'true'
+        run: |
+          # Espera só os checks exigidos pela ruleset (ignora este próprio job e os da Netlify).
+          for i in $(seq 1 90); do
+            s=$(gh pr checks "$PR" --repo "$GITHUB_REPOSITORY" --json name,state 2>/dev/null || echo '[]')
+            ci=$(echo "$s" | jq -r '.[] | select(.name=="lint · type-check · build") | .state')
+            lh=$(echo "$s" | jq -r '.[] | select(.name=="lighthouse") | .state')
+            echo "ci=$ci lighthouse=$lh"
+            if [ "$ci" = "SUCCESS" ] && [ "$lh" = "SUCCESS" ]; then exit 0; fi
+            case "$ci$lh" in *FAILURE*|*ERROR*|*CANCELLED*) echo "check falhou"; exit 1;; esac
+            sleep 20
+          done
+          echo "timeout esperando checks"; exit 1
+
+      - name: Merge + aviso 🚀
+        if: steps.scope.outputs.ok == 'true'
+        run: |
+          gh pr merge "$PR_URL" --squash --delete-branch
+          links='${{ steps.scope.outputs.links }}'
+          if [ -n "$links" ]; then
+            body=$(printf '🚀 **Publicado.** Em ~1 minuto estará no ar:\n%s\n\n_(Artigo removido? O link passa a dar "página não encontrada".)_' "$links")
+          else
+            body='🚀 **Publicado.** A alteração está no ar em https://carmelonunes.com.br (≈1 min).'
+          fi
+          gh pr comment "$PR_URL" --body "$body"
+
+      - name: Aviso de falha
+        if: failure() && steps.scope.outputs.ok == 'true'
+        run: |
+          gh pr comment "$PR_URL" --body "❌ A publicação automática não concluiu: uma verificação falhou ou demorou demais. O Pedro vai olhar — nada a fazer por aqui."
