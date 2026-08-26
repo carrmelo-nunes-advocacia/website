@@ -19,15 +19,17 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-primary/10">
       <nav className="container mx-auto flex items-center h-16 md:h-20 px-4 lg:px-8">
-        {/* Logo à esquerda, nav items à direita */}
-        <div className="hidden md:flex items-center flex-1 justify-between">
-          <Link to="/" className="flex items-center gap-3" aria-label="Página inicial">
-            <img
-              src={logoCN}
-              alt="Carmelo Nunes Sociedade de Advogados"
-              className="h-10 sm:h-12 w-auto [filter:brightness(0)_saturate(100%)_invert(74%)_sepia(22%)_saturate(746%)_hue-rotate(7deg)_brightness(93%)_contrast(84%)]"
-            />
-          </Link>
+        {/* Logo centered between left margin and nav items */}
+        <div className="hidden md:flex items-center flex-1">
+          <div className="flex-1 flex justify-center">
+            <Link to="/" className="flex items-center gap-3" aria-label="Página inicial">
+              <img
+                src={logoCN}
+                alt="Carmelo Nunes Sociedade de Advogados"
+                className="h-10 sm:h-12 w-auto [filter:brightness(0)_saturate(100%)_invert(74%)_sepia(22%)_saturate(746%)_hue-rotate(7deg)_brightness(93%)_contrast(84%)]"
+              />
+            </Link>
+          </div>
           <div className="flex items-center gap-8">
             {navItems.map((item) => (
               <Link
