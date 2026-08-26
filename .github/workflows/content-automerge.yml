@@ -32,6 +32,7 @@ jobs:
             case "$f" in
               src/content/artigos/_*) ok=false ;;          # _template.md é técnico
               src/content/artigos/*.md) ;;
+              public/sitemap.xml) ;;                       # gerado no build; inofensivo
               *) ok=false ;;
             esac
           done <<< "$files"
