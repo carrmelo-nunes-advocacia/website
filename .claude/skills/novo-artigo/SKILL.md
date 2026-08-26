@@ -86,6 +86,19 @@ verde o merge acontece sozinho; depois `git switch main && git pull`.
 Diga ao usuário: "Publicado. Em ~1 minuto estará em https://carmelonunes.com.br/conteudo/<slug>".
 Se algum check falhar, explique em uma frase o que falhou e o que fará; não force nada.
 
+## Alterar ou remover um artigo publicado
+
+Mesmo fluxo, pulando a criação:
+
+- **Alterar** ("corrigir o artigo X", "trocar o título", "acrescentar um parágrafo"): localize o
+  arquivo em `src/content/artigos/` pelo título (`grep -l "title:" …`). Mostre o trecho atual e o
+  novo, peça **"ok"**, edite o `.md` e atualize `updated:` no frontmatter com a data de hoje.
+  **Nunca mude o nome do arquivo (slug)** — a URL do artigo depende dele.
+- **Remover** ("tirar o artigo X do ar", "apagar"): confirme o título exato e peça **"ok"**;
+  então `git rm src/content/artigos/<slug>.md`. O artigo sai da lista, da página e do sitemap.
+- Siga os passos 4 (Conferir) e 5 (Publicar). Como só toca `src/content/artigos/`, publica
+  sozinho. Mensagem final: "sua correção está indo pro ar" / "o artigo está saindo do ar".
+
 ## 6. Nunca
 
 - Editar arquivos fora de `src/content/artigos/` nesta skill (o guard bloqueia infra).
