@@ -22,16 +22,13 @@ O GitHub é onde o site fica guardado. Você precisa de uma conta gratuita.
 ### A2 · Conectar o Claude ao GitHub
 
 - Abra **claude.ai/code** (não é o chat comum) e entre com a conta do Claude do escritório (plano Pro).
+- Se aparecer um botão para **conectar o GitHub**, clique e entre com a **sua conta GitHub** (a que aceitou o convite). Autorize o aplicativo **Claude**.
+- **Abaixo da caixa de mensagem** há um seletor de repositório. Clique e escolha **carrmelo-nunes-advocacia / website**. Ao lado, no seletor de modo, deixe **Accept edits**.
+- Pronto — não há mais nada a instalar: o aplicativo Claude já está instalado na organização pelo Pedro.
 
-- Na primeira vez aparece um botão para conectar o GitHub. Clique, entre na sua conta GitHub e autorize o aplicativo **Claude**.
+**Não use** *Settings → Connectors → GitHub Integration*: isso é outra coisa (conector do chat) e não faz o repositório aparecer.
 
-- Se aparecer uma tela de *environment*, aceite o padrão (**Default**).
-
-- Abaixo da caixa de mensagem há um **seletor de repositório**. Escolha **carrmelo-nunes-advocacia / website**.
-
-- Ao lado, no seletor de modo, deixe **Accept edits**.
-
-Se o repositório não aparecer na lista: você ainda não aceitou o convite da organização (A1, passo 3). Aceite e recarregue a página.
+Se o repositório não aparecer: você ainda não aceitou o convite da organização (A1, passo 3) ou entrou no GitHub com outra conta. Aceite/corrija e recarregue a página.
 
 ## Parte B · Uso (a cada artigo)
 
@@ -69,7 +66,7 @@ Se o repositório não aparecer na lista: você ainda não aceitou o convite da 
 
 - Clique em **Create PR**, logo **acima da caixa de mensagem** (ao lado do contador de linhas, ex.: `+70 −0`).
 
-- Só isso. As verificações automáticas rodam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**. Você recebe um aviso **🚀 Publicado** na página que abrir e por e-mail do GitHub.
+- Abre a página do pedido no GitHub. Em ~2 min aparece ali um comentário **👀 Prévia pronta** com um link para ver como ficou. As verificações rodam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**; você recebe o aviso **🚀 Publicado** na mesma página e por e-mail.
 
 Você pode fechar a aba depois de clicar; a publicação continua sozinha.
 
@@ -81,7 +78,7 @@ Você pode fechar a aba depois de clicar; a publicação continua sozinha.
 | Tirar um artigo do ar | *"Remova o artigo <título>"* → ok → Create PR |
 | Ver a lista de artigos | *"Quais artigos estão publicados?"* |
 
-Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (texto de página, foto, sócio novo, menu) o Claude também faz, mas o site **não publica automaticamente** — o Pedro revisa e aprova.
+Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (layout, texto de página, foto, sócio novo, menu) o Claude também faz — e você também clica em **Create PR** e recebe o link de **prévia** — mas o site **não publica automaticamente**: o Pedro revisa a prévia e aprova.
 
 ### B5 · Se algo der errado
 
