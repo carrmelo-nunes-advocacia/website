@@ -1,0 +1,174 @@
+<title>Guia do Site Carmelo Nunes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #f7f5f0; --card: #ffffff; --ink: #14202b; --ink-2: #3c4753; --ink-3: #6b7480;
+    --line: #dcd6c8; --navy: #0f1a26; --gold: #a8874c; --gold-soft: #f1e9d8;
+    --warn-bg: #fbf0e6; --warn-ink: #7a3e12;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0f1a26; --card: #16222e; --ink: #f3efe6; --ink-2: #c9c3b6; --ink-3: #9a958a;
+      --line: #2b3844; --navy: #f3efe6; --gold: #c6a46a; --gold-soft: #24303c;
+      --warn-bg: #2c2418; --warn-ink: #e8c9a0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0f1a26; --card: #16222e; --ink: #f3efe6; --ink-2: #c9c3b6; --ink-3: #9a958a;
+    --line: #2b3844; --navy: #f3efe6; --gold: #c6a46a; --gold-soft: #24303c;
+    --warn-bg: #2c2418; --warn-ink: #e8c9a0;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.65; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  h1 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; font-size: clamp(32px, 5vw, 44px); line-height: 1.15; color: var(--navy); margin: 10px 0 14px; text-wrap: balance; }
+  .lede { color: var(--ink-2); font-size: 18px; margin: 0 0 8px; }
+  .meta { color: var(--ink-3); font-size: 14px; }
+  h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 26px; color: var(--navy); margin: 0 0 14px; line-height: 1.25; text-wrap: balance; display: flex; gap: 14px; align-items: baseline; }
+  h2 .n { font-family: Inter, sans-serif; font-size: 13px; color: var(--gold); letter-spacing: .08em; font-weight: 600; }
+  h3 { font-size: 17px; font-weight: 600; margin: 22px 0 8px; color: var(--ink); }
+  section { border-top: 1px solid var(--line); padding-top: 32px; margin-top: 36px; }
+  .part { margin-top: 56px; }
+  .part-label { font-family: "Playfair Display", Georgia, serif; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 4px; }
+  p { margin: 0 0 12px; color: var(--ink-2); }
+  ol, ul { margin: 0 0 12px; padding-left: 24px; color: var(--ink-2); display: flex; flex-direction: column; gap: 6px; }
+  li strong, p strong { color: var(--ink); font-weight: 600; }
+  kbd { font-family: Inter, sans-serif; font-size: .85em; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; background: var(--card); color: var(--ink); }
+  .btn { display: inline-block; font-weight: 600; color: var(--ink); background: var(--gold-soft); border: 1px solid var(--line); border-radius: 6px; padding: 0 7px; font-size: .92em; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .9em; background: var(--gold-soft); padding: 1px 6px; border-radius: 4px; color: var(--ink); }
+  .callout { background: var(--gold-soft); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+  .callout p { margin: 0; color: var(--ink); }
+  .warn { background: var(--warn-bg); border-left-color: var(--warn-ink); }
+  .warn p { color: var(--warn-ink); }
+  .paste { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; font-size: 15.5px; line-height: 1.6; color: var(--ink); white-space: pre-wrap; margin: 10px 0 14px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; gap: 12px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+  .steps li::before { content: counter(s); width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: var(--paper); font-weight: 600; font-size: 14px; display: grid; place-items: center; margin-top: 2px; }
+  .tablewrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-2); }
+  th { color: var(--ink); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+  td:first-child { color: var(--ink); font-weight: 500; width: 42%; }
+  .refs { font-size: 14.5px; }
+  .refs a, a { color: var(--ink); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  em { font-style: italic; color: var(--ink); }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Carmelo Nunes Sociedade de Advogados</div>
+  <h1>Como publicar artigos no site</h1>
+  <p class="lede">Guia do Claude Code na web, para quem nunca usou. Não precisa saber programar nem instalar nada.</p>
+  <div class="meta">Versão de 26 de agosto de 2026 · Parte A é feita uma vez; Parte B, a cada artigo</div>
+
+  <div class="callout" style="margin-top:28px">
+    <p><strong>Como funciona, em uma frase:</strong> você conversa com o Claude, ele escreve o artigo no formato certo, você aprova e clica em um botão. Verificações automáticas rodam e, se tudo passar, o artigo entra no ar sozinho em cerca de 5 minutos.</p>
+  </div>
+
+  <div class="part"><span class="part-label">Parte A · Configuração (uma vez)</span></div>
+
+  <section>
+    <h2><span class="n">A1</span>Conta no GitHub</h2>
+    <p>O GitHub é onde o site fica guardado. Você precisa de uma conta gratuita.</p>
+    <ol class="steps">
+      <li><span>Acesse <strong>github.com/signup</strong> e crie a conta com o seu e-mail do escritório. Anote o <strong>nome de usuário</strong> escolhido.</span></li>
+      <li><span>Envie esse nome de usuário ao Pedro. Ele vai adicionar você à organização <strong>carrmelo-nunes-advocacia</strong>.</span></li>
+      <li><span>Você receberá um e-mail <em>"You've been invited to join carrmelo-nunes-advocacia"</em>. Clique em <span class="btn">Join</span> e aceite.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="n">A2</span>Conectar o Claude ao GitHub</h2>
+    <ol class="steps">
+      <li><span>Abra <strong>claude.ai/code</strong> (não é o chat comum) e entre com a conta do Claude do escritório (plano Pro).</span></li>
+      <li><span>Na primeira vez aparece um botão para conectar o GitHub. Clique, entre na sua conta GitHub e autorize o aplicativo <strong>Claude</strong>.</span></li>
+      <li><span>Se aparecer uma tela de <em>environment</em>, aceite o padrão (<strong>Default</strong>).</span></li>
+      <li><span>Abaixo da caixa de mensagem há um <strong>seletor de repositório</strong>. Escolha <strong>carrmelo-nunes-advocacia / website</strong>.</span></li>
+      <li><span>Ao lado, no seletor de modo, deixe <strong>Accept edits</strong>.</span></li>
+    </ol>
+    <div class="callout"><p>Se o repositório não aparecer na lista: você ainda não aceitou o convite da organização (A1, passo 3). Aceite e recarregue a página.</p></div>
+  </section>
+
+  <div class="part"><span class="part-label">Parte B · Uso (a cada artigo)</span></div>
+
+  <section>
+    <h2><span class="n">B1</span>Pedir o artigo</h2>
+    <ol class="steps">
+      <li><span>Em <strong>claude.ai/code</strong>, confira que o repositório <strong>website</strong> está selecionado.</span></li>
+      <li><span>Digite <code>/novo-artigo</code> e envie.</span></li>
+      <li><span>O Claude faz cinco perguntas numa lista: tema e mensagem central, categoria, quem assina (nome e OAB), se você já tem o texto ou quer que ele redija, e fontes. Responda tudo numa mensagem só, em português normal. Se já tiver o texto, cole inteiro.</span></li>
+    </ol>
+    <h3>Exemplo de resposta</h3>
+    <div class="paste">1. Acordo de sócios em PMEs: por que toda empresa com mais de um sócio precisa de um.
+2. Governança Empresarial
+3. Dr. Carlos Carmelo Nunes, OAB/SP 000.000
+4. Redija você. Para empresários. Tamanho médio.
+5. Código Civil, arts. 997 a 1.038.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">B2</span>Revisar e aprovar</h2>
+    <ul>
+      <li>O Claude mostra o artigo completo. Leia com calma.</li>
+      <li>Peça ajustes à vontade: <em>"encurte a introdução"</em>, <em>"troque o título"</em>, <em>"acrescente um parágrafo sobre cláusula de saída"</em>.</li>
+      <li>Quando estiver bom, responda <strong>ok</strong>. Só então ele grava.</li>
+    </ul>
+    <div class="callout warn">
+      <p><strong>Regras da OAB (Provimento 205/2021)</strong> — o Claude aplica sozinho: nada de promessa de resultado, "consulta grátis", preço, urgência, comparação com outros escritórios ou nome de cliente. Se o seu texto tiver algo assim, ele avisa e propõe a troca. Não insista.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">B3</span>Publicar</h2>
+    <ol class="steps">
+      <li><span>Depois do "ok", o Claude confere o site (leva ~1 min) e escreve: <em>"Pronto. Clique em Create PR."</em></span></li>
+      <li><span>Clique em <span class="btn">Create PR</span>, na barra inferior da tela (ao lado do contador <code>+70 −0</code>).</span></li>
+      <li><span>Só isso. As verificações automáticas rodam (~5 min) e o artigo entra no ar em <strong>carmelonunes.com.br/conteudo/…</strong>. O Claude te dá o link exato — abra e confira.</span></li>
+    </ol>
+    <p>Você pode fechar a aba depois de clicar; a publicação continua sozinha.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">B4</span>Outras tarefas com artigos</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Quero…</th><th>O que dizer ao Claude</th></tr></thead>
+        <tbody>
+          <tr><td>Corrigir um artigo publicado</td><td><em>"No artigo &lt;título&gt;, troque … por …"</em> → ok → Create PR</td></tr>
+          <tr><td>Tirar um artigo do ar</td><td><em>"Remova o artigo &lt;título&gt;"</em> → Create PR</td></tr>
+          <tr><td>Ver a lista de artigos</td><td><em>"Quais artigos estão publicados?"</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px">Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (texto de página, foto, sócio novo, menu) o Claude também faz, mas o site <strong>não publica automaticamente</strong> — o Pedro revisa e aprova.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">B5</span>Se algo der errado</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Situação</th><th>O que fazer</th></tr></thead>
+        <tbody>
+          <tr><td>O repositório não aparece</td><td>Aceite o convite da organização no e-mail e recarregue</td></tr>
+          <tr><td>O Claude escreveu algo que não pedi</td><td>Diga: <em>"desfaça, altere só X e nada mais"</em></td></tr>
+          <tr><td>Cliquei em Create PR e passaram 15 min sem publicar</td><td>Abra o link do PR que apareceu; se houver um ❌, mande o link ao Pedro</td></tr>
+          <tr><td>Apareceu "precisa de revisão técnica"</td><td>A mudança foi além de artigos. Avise o Pedro; ele aprova</td></tr>
+          <tr><td>Fechei a aba no meio</td><td>Sem problema: em claude.ai/code a sessão continua na lista da esquerda</td></tr>
+          <tr><td>Formulários, e-mails, domínio, fotos</td><td>Não é pelo Claude — chame o Pedro</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="refs">
+    <h2>Referências</h2>
+    <ul>
+      <li>Anthropic — <a href="https://code.claude.com/docs/en/web-quickstart">Get started with Claude Code on the web</a></li>
+      <li>Anthropic — <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Use Claude Code on the web</a></li>
+      <li>GitHub — <a href="https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization">Inviting users to join your organization</a></li>
+      <li>OAB — <a href="https://www.oab.org.br/leisnormas/legislacao/provimentos/205-2021">Provimento 205/2021 — publicidade na advocacia</a></li>
+    </ul>
+  </section>
+</div>
