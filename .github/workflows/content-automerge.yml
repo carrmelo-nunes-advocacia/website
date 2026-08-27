@@ -1,11 +1,12 @@
-name: Auto-merge de conteúdo
+name: Prévia e pedido de OK
 
-# Publicação "1 clique" para quem edita pela web (claude.ai/code): se o PR só toca artigos em
-# src/content/artigos/, espera os checks obrigatórios (CI + Lighthouse), faz o merge e comenta
-# "🚀 Publicado" com o link. Qualquer arquivo fora desse caminho → sem auto-merge → revisão técnica.
-#
-# Por que mesclar aqui em vez de `gh pr merge --auto`: merges feitos pelo GITHUB_TOKEN não disparam
-# outras workflows, então um job separado "pós-merge" nunca rodaria. Tudo acontece neste job.
+# Fluxo de publicação pela web (claude.ai/code):
+# 1. PR aberto → este job classifica (só artigos? ou layout/outros?), espera CI + Lighthouse e a
+#    prévia da Netlify, e comenta o link da prévia.
+# 2. Só artigos → pergunta "Ficou bom? Responda **publicar**". O merge acontece na workflow
+#    publicar-com-ok.yml quando a pessoa responder na página do PR.
+#    Outros arquivos → revisão técnica (Pedro mescla).
+# Nada é publicado sem o OK humano na prévia.
 
 on:
   pull_request:
@@ -61,7 +62,7 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
           if [ -n "$url" ]; then
             if [ "${{ steps.scope.outputs.ok }}" = "true" ]; then
-              gh pr comment "$PR_URL" --body "👀 **Prévia pronta:** $url — é assim que vai ficar. A publicação segue automática."
+              gh pr comment "$PR_URL" --body "👀 **Prévia pronta:** $url — veja como ficou (no computador e no celular). Se estiver bom, **responda \`publicar\` aqui** e eu ponho no ar. Quer mudar algo? Peça na conversa do Claude; a prévia se atualiza sozinha."
             else
               gh pr comment "$PR_URL" --body "👀 **Prévia pronta:** $url — confira como ficou. Como esta mudança vai além de artigos, o Pedro revisa e aprova a publicação; você recebe o aviso aqui quando estiver no ar."
             fi
@@ -72,10 +73,10 @@ jobs:
         run: |
           gh pr comment "$PR_URL" --body "ℹ️ Esta mudança vai além de artigos (layout, textos de página, fotos…). Ela **não publica sozinha**: o Pedro revisa a prévia e aprova. Nada a fazer por aqui."
 
-      - name: Avisar que vai publicar sozinho
+      - name: Avisar o que vai acontecer
         if: steps.scope.outputs.ok == 'true'
         run: |
-          gh pr comment "$PR_URL" --body "✅ Só artigos alterados: publicação automática habilitada. Assim que as verificações passarem, o merge acontece sozinho e eu aviso aqui."
+          gh pr comment "$PR_URL" --body "✅ Só artigos alterados. Vou preparar uma **prévia** (~2 min) e as verificações (~5 min). Quando estiver tudo pronto, pergunto aqui se pode publicar."
 
       - name: Esperar CI e Lighthouse
         if: steps.scope.outputs.ok == 'true'
@@ -92,19 +93,12 @@ jobs:
           done
           echo "timeout esperando checks"; exit 1
 
-      - name: Merge + aviso 🚀
+      - name: Verificações concluídas — aguardando OK
         if: steps.scope.outputs.ok == 'true'
         run: |
-          gh pr merge "$PR_URL" --squash --delete-branch
-          links='${{ steps.scope.outputs.links }}'
-          if [ -n "$links" ]; then
-            body=$(printf '🚀 **Publicado.** Em ~1 minuto estará no ar:\n%s\n\n_(Artigo removido? O link passa a dar "página não encontrada".)_' "$links")
-          else
-            body='🚀 **Publicado.** A alteração está no ar em https://carmelonunes.com.br (≈1 min).'
-          fi
-          gh pr comment "$PR_URL" --body "$body"
+          gh pr comment "$PR_URL" --body "✔️ Verificações concluídas. Está tudo certo tecnicamente — só falta o seu **\`publicar\`** aqui para ir ao ar."
 
       - name: Aviso de falha
         if: failure() && steps.scope.outputs.ok == 'true'
         run: |
-          gh pr comment "$PR_URL" --body "❌ A publicação automática não concluiu: uma verificação falhou ou demorou demais. O Pedro vai olhar — nada a fazer por aqui."
+          gh pr comment "$PR_URL" --body "❌ Uma verificação falhou ou demorou demais; a publicação está pausada. O Pedro vai olhar — nada a fazer por aqui."

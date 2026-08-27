@@ -69,10 +69,10 @@ Se o repositório não aparecer: você ainda não aceitou o convite da organiza�
 
 - Na página do pedido, em ~2 minutos aparece um comentário **👀 Prévia pronta** com um link. Abra-o: é o site inteiro com a sua mudança, antes de ir ao ar.
 - Veja no computador **e no celular**. Leia o artigo, confira título, data, autor e se nada ficou cortado ou fora do lugar.
-- **Ficou bom?** Não precisa fazer nada. As verificações automáticas terminam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**; você recebe o aviso **🚀 Publicado** na mesma página e por e-mail.
+- **Ficou bom?** Na mesma página do pedido, escreva **publicar** na caixa de comentário (embaixo) e envie. Em ~1 minuto o artigo entra no ar em **carmelonunes.com.br/conteudo/…** e você recebe o aviso **🚀 Publicado** ali e por e-mail. **Sem o seu "publicar", nada vai ao ar.**
 - **Quer mudar algo?** Volte à conversa no claude.ai/code e peça o ajuste (*"troque o título por…"*). O Claude grava de novo e a prévia se atualiza sozinha no mesmo pedido — sem clicar em Create PR outra vez. Confira e pronto.
 
-> Se a mudança era só em artigos, ela vai ao ar sozinha assim que as verificações passarem — mesmo que você não abra a prévia. Se não quiser publicar, peça ao Claude: *"desfaça tudo"*, ou avise o Pedro.
+> Se você responder "publicar" antes de as verificações terminarem, a automação avisa e pede para responder de novo quando ficarem verdes. Se desistir, basta não responder — ou peça ao Claude *"desfaça tudo"*.
 
 ### B5 · Outras tarefas com artigos
 
@@ -82,7 +82,7 @@ Se o repositório não aparecer: você ainda não aceitou o convite da organiza�
 | Tirar um artigo do ar | *"Remova o artigo <título>"* → ok → Create PR |
 | Ver a lista de artigos | *"Quais artigos estão publicados?"* |
 
-Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (layout, texto de página, foto, sócio novo, menu) o Claude também faz — e você também clica em **Create PR** e recebe o link de **prévia** — mas o site **não publica automaticamente**: o Pedro revisa a prévia e aprova.
+Tudo isso segue o mesmo caminho (prévia → seu "publicar"), porque só mexe em artigos. Qualquer outra coisa (layout, texto de página, foto, sócio novo, menu) o Claude também faz — e você também clica em **Create PR** e recebe o link de **prévia** — mas o site **não publica automaticamente**: o Pedro revisa a prévia e aprova.
 
 ### B6 · Se algo der errado
 
@@ -90,7 +90,7 @@ Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (lay
 |---|---|
 | O repositório não aparece | Aceite o convite da organização no e-mail e recarregue |
 | O Claude escreveu algo que não pedi | Diga: *"desfaça, altere só X e nada mais"* |
-| Cliquei em Create PR e passaram 15 min sem publicar | Abra o link do PR que apareceu; se houver um ❌, mande o link ao Pedro |
+| Respondi "publicar" e não foi ao ar | Veja o último comentário na página do pedido: ⏳ = verificações ainda rodando, responda de novo depois; ❌ = mande o link ao Pedro |
 | Apareceu "precisa de revisão técnica" | A mudança foi além de artigos. Avise o Pedro; ele aprova |
 | Fechei a aba no meio | Sem problema: em claude.ai/code a sessão continua na lista da esquerda |
 | Formulários, e-mails, domínio, fotos | Não é pelo Claude — chame o Pedro |

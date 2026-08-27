@@ -1,0 +1,80 @@
+name: Publicar com OK
+
+# Mescla o PR quando alguém com acesso de escrita responder "publicar" (ou "ok") na página do PR,
+# desde que o PR só toque artigos e os checks obrigatórios estejam verdes. É o portão humano do
+# fluxo web: a pessoa vê a prévia e decide.
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  publicar:
+    name: publicar (após OK)
+    if: github.event.issue.pull_request && github.event.comment.user.type == 'User'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR: ${{ github.event.issue.number }}
+      PR_URL: ${{ github.event.issue.html_url }}
+      BODY: ${{ github.event.comment.body }}
+      AUTHOR: ${{ github.event.comment.user.login }}
+    steps:
+      - name: É um OK?
+        id: ok
+        run: |
+          b=$(printf '%s' "$BODY" | tr '[:upper:]' '[:lower:]' | tr -d '`*_ \r\n.!')
+          case "$b" in
+            publicar|publica|podepublicar|ok|aprovado|aprovo|pornoar|põenoar|poenoar) echo "ok=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "ok=false" >> "$GITHUB_OUTPUT" ;;
+          esac
+      - name: Autor tem permissão de escrita?
+        if: steps.ok.outputs.ok == 'true'
+        id: perm
+        run: |
+          p=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$AUTHOR/permission" --jq .permission 2>/dev/null || echo none)
+          echo "perm=$p"
+          case "$p" in admin|maintain|write) echo "ok=true" >> "$GITHUB_OUTPUT" ;; *) echo "ok=false" >> "$GITHUB_OUTPUT" ;; esac
+      - name: Só artigos e checks verdes?
+        if: steps.ok.outputs.ok == 'true' && steps.perm.outputs.ok == 'true'
+        id: gate
+        run: |
+          files=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json files --jq '.files[].path')
+          ok=true
+          while IFS= read -r f; do
+            case "$f" in
+              src/content/artigos/_*) ok=false ;;
+              src/content/artigos/*.md) ;;
+              public/sitemap.xml) ;;
+              *) ok=false ;;
+            esac
+          done <<< "$files"
+          [ -n "$files" ] || ok=false
+          s=$(gh pr checks "$PR" --repo "$GITHUB_REPOSITORY" --json name,state 2>/dev/null || echo '[]')
+          ci=$(echo "$s" | jq -r '.[] | select(.name=="lint · type-check · build") | .state')
+          lh=$(echo "$s" | jq -r '.[] | select(.name=="lighthouse") | .state')
+          [ "$ci" = "SUCCESS" ] && [ "$lh" = "SUCCESS" ] || checks=false
+          echo "artigos=$ok checks=${checks:-true}"
+          echo "artigos=$ok" >> "$GITHUB_OUTPUT"; echo "checks=${checks:-true}" >> "$GITHUB_OUTPUT"
+          links=$(printf '%s\n' "$files" | grep -E '^src/content/artigos/[^_].*\.md$' | sed -E 's#src/content/artigos/(.*)\.md#- https://carmelonunes.com.br/conteudo/\1#' || true)
+          { echo "links<<EOF"; echo "$links"; echo "EOF"; } >> "$GITHUB_OUTPUT"
+      - name: Merge + aviso 🚀
+        if: steps.ok.outputs.ok == 'true' && steps.perm.outputs.ok == 'true' && steps.gate.outputs.artigos == 'true' && steps.gate.outputs.checks == 'true'
+        run: |
+          gh pr merge "$PR_URL" --squash --delete-branch
+          links='${{ steps.gate.outputs.links }}'
+          body=$(printf '🚀 **Publicado.** Em ~1 minuto estará no ar:\n%s\n\n_(Artigo removido? O link passa a dar "página não encontrada".)_' "$links")
+          gh pr comment "$PR_URL" --body "$body"
+      - name: Ainda não dá
+        if: steps.ok.outputs.ok == 'true' && steps.perm.outputs.ok == 'true' && (steps.gate.outputs.artigos != 'true' || steps.gate.outputs.checks != 'true')
+        run: |
+          if [ "${{ steps.gate.outputs.artigos }}" != "true" ]; then
+            gh pr comment "$PR_URL" --body "ℹ️ Recebi o OK, mas esta mudança vai além de artigos — quem publica é o Pedro, depois de revisar."
+          else
+            gh pr comment "$PR_URL" --body "⏳ Recebi o OK, mas as verificações ainda não terminaram (ou falharam). Assim que ficarem verdes, responda \`publicar\` de novo."
+          fi
