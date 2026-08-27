@@ -73,10 +73,11 @@ existe `gh` (Claude Code na web / claude.ai/code), é **web**.
 
 **Web (claude.ai/code):**
 1. Commit na branch da sessão: `git add src/content/artigos/<slug>.md && git commit -m "feat(conteudo): novo artigo — <título curto>"`.
-2. Diga ao usuário, exatamente: **"Pronto. Clique em *Create PR*, logo acima da caixa de mensagem. Como só o
-   artigo foi alterado, a publicação é automática: em cerca de 5 minutos ele estará em
-   https://carmelonunes.com.br/conteudo/<slug>. Você receberá um comentário 🚀 *Publicado* no
-   PR (e por e-mail do GitHub) quando estiver no ar."**
+2. Diga ao usuário, exatamente: **"Pronto. Clique em *Create PR*, logo acima da caixa de mensagem —
+   o link do pedido aparece aqui na tela; abra-o. Em ~2 minutos chega ali um comentário 👀 com a
+   **prévia** do site. Confira (no celular também). Se estiver bom, responda **publicar** naquela
+   página e o artigo entra no ar em ~1 minuto, com um aviso 🚀. Quer mudar algo? Me peça aqui; a
+   prévia se atualiza sozinha."**
 3. Não tente abrir PR nem fazer merge por comando — a automação (`content-automerge.yml`)
    cuida do merge quando os checks ficarem verdes.
 

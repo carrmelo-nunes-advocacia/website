@@ -21,8 +21,8 @@ saída de terminal; um resumo curto por etapa, falando da **coisa no site** ("a 
 **Encerramento obrigatório na web (claude.ai/code)** — toda mudança termina assim, sem esperar a
 pessoa pedir:
 > "Pronto. Clique em **Create PR**, logo acima da caixa de mensagem. Em ~2 minutos aparece um
-> link de **prévia** para você conferir. [Artigo:] Como só o artigo mudou, ele entra no ar sozinho
-> depois das verificações (~5 min) e você recebe um aviso 🚀 *Publicado*. [Outros:] Como mexeu em
+> link de **prévia** para você conferir. [Artigo:] Confira a prévia; se estiver bom, responda **publicar** na
+> página do pedido e ele entra no ar em ~1 min, com aviso 🚀. [Outros:] Como mexeu em
 > outra parte do site, o Pedro revisa a prévia e aprova — você recebe o aviso quando estiver no ar."
 
 Nunca diga "não vou abrir PR a menos que peça" — o clique em Create PR **é** o passo final e a
@@ -100,15 +100,16 @@ touch .claude/.allow-infra   # git-ignored; desliga o guard localmente
 | `.github/workflows/CI.yml`                   | PR + push em main: `pnpm lint` (SAST via eslint-plugin-security), `type-check`, `build`               |
 | `.github/workflows/lighthouse.yml`           | PR: aguarda o deploy preview da Netlify e audita a11y/best-practices (bloqueia <0.9), SEO/perf (warn) |
 | `.github/workflows/dependabot-automerge.yml` | auto-merge de minor/patch do Dependabot                                                               |
-| `.github/workflows/content-automerge.yml`    | PR que só toca `src/content/artigos/*.md`: espera CI+Lighthouse, mescla e comenta "🚀 Publicado" (fluxo web "1 clique"). Merge pelo GITHUB_TOKEN não dispara outras workflows — por isso tudo fica neste job |
+| `.github/workflows/content-automerge.yml`    | PR: classifica (só artigos?), espera CI+Lighthouse, comenta a prévia 👀 e pede `publicar`. Não mescla                     |
+| `.github/workflows/publicar-com-ok.yml`      | `issue_comment`: se alguém com write responder `publicar`/`ok` num PR só de artigos com checks verdes → merge + 🚀     |
 | `.github/dependabot.yml`                     | npm + github-actions, semanal, cooldown 7 dias, agrupado minor+patch                                  |
 | `netlify.toml`                               | build Vite → `dist`, headers de segurança, SPA fallback, redirects                                    |
 
 ## Fluxo de edição
 
 **Dois ambientes.** O escritório usa **Claude Code na web** (claude.ai/code): sem instalação, o
-repo já conectado; ao final clica em *Create PR* e, se só alterou artigos, o merge é automático
-(`content-automerge.yml`). Hooks de `.claude/settings.json` **não rodam na web** — o portão ali é
+repo já conectado; ao final clica em *Create PR*, confere a **prévia** e responde `publicar` no PR;
+só então o merge acontece (`publicar-com-ok.yml`). Nada vai ao ar sem OK humano na prévia. Hooks de `.claude/settings.json` **não rodam na web** — o portão ali é
 a ruleset da `main` (CI + Lighthouse) e o auto-merge restrito por caminho. O terminal é para a
 parte técnica (Pedro).
 
