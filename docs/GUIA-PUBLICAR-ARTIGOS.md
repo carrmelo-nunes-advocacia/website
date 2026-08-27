@@ -63,14 +63,18 @@ Se o repositório não aparecer: você ainda não aceitou o convite da organiza�
 ### B3 · Publicar
 
 - Depois do "ok", o Claude confere o site (leva ~1 min) e escreve: *"Pronto. Clique em Create PR."*
+- Clique em **Create PR**, logo **acima da caixa de mensagem** (ao lado do contador de linhas, ex.: `+70 −0`). O **link do pedido** aparece ali mesmo na tela — abra-o.
 
-- Clique em **Create PR**, logo **acima da caixa de mensagem** (ao lado do contador de linhas, ex.: `+70 −0`).
+### B4 · Conferir se ficou como você queria
 
-- Abre a página do pedido no GitHub. Em ~2 min aparece ali um comentário **👀 Prévia pronta** com um link para ver como ficou. As verificações rodam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**; você recebe o aviso **🚀 Publicado** na mesma página e por e-mail.
+- Na página do pedido, em ~2 minutos aparece um comentário **👀 Prévia pronta** com um link. Abra-o: é o site inteiro com a sua mudança, antes de ir ao ar.
+- Veja no computador **e no celular**. Leia o artigo, confira título, data, autor e se nada ficou cortado ou fora do lugar.
+- **Ficou bom?** Não precisa fazer nada. As verificações automáticas terminam (~5 min) e o artigo entra no ar em **carmelonunes.com.br/conteudo/…**; você recebe o aviso **🚀 Publicado** na mesma página e por e-mail.
+- **Quer mudar algo?** Volte à conversa no claude.ai/code e peça o ajuste (*"troque o título por…"*). O Claude grava de novo e a prévia se atualiza sozinha no mesmo pedido — sem clicar em Create PR outra vez. Confira e pronto.
 
-Você pode fechar a aba depois de clicar; a publicação continua sozinha.
+> Se a mudança era só em artigos, ela vai ao ar sozinha assim que as verificações passarem — mesmo que você não abra a prévia. Se não quiser publicar, peça ao Claude: *"desfaça tudo"*, ou avise o Pedro.
 
-### B4 · Outras tarefas com artigos
+### B5 · Outras tarefas com artigos
 
 | Quero… | O que dizer ao Claude |
 |---|---|
@@ -80,7 +84,7 @@ Você pode fechar a aba depois de clicar; a publicação continua sozinha.
 
 Tudo isso publica sozinho, porque só mexe em artigos. Qualquer outra coisa (layout, texto de página, foto, sócio novo, menu) o Claude também faz — e você também clica em **Create PR** e recebe o link de **prévia** — mas o site **não publica automaticamente**: o Pedro revisa a prévia e aprova.
 
-### B5 · Se algo der errado
+### B6 · Se algo der errado
 
 | Situação | O que fazer |
 |---|---|
