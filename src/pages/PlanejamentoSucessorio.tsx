@@ -46,7 +46,7 @@ const PlanejamentoSucessorio = () => {
         {
           question: "Holding familiar vale a pena?",
           answer:
-            "Para famílias com patrimônio relevante, empresarial e/ou imobiliário, a holding costuma trazer ganhos em governança, proteção patrimonial, eficiência tributária e organização sucessória. O modelo deve ser desenhado caso a caso: estrutura societária, regras de governança, acordo de sócios e instrumentos de doação com reserva de usufruto.",
+            "Para famílias com patrimônio relevante (empresarial e/ou imobiliário), a holding costuma trazer ganhos em governança, proteção patrimonial, eficiência tributária e organização sucessória. O modelo deve ser desenhado caso a caso: estrutura societária, regras de governança, acordo de sócios e instrumentos de doação com reserva de usufruto.",
         },
         {
           question: "Quando é o momento certo para começar a planejar a sucessão?",

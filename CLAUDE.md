@@ -75,9 +75,10 @@ Se um pedido esbarrar nessas regras, explique em uma linha e proponha alternativ
 
 ## Estilo de escrita (vale para todo texto do site)
 
-**Nunca use travessão (—) nem meia-risca (–) em nada que apareça no site**: páginas, artigos,
-títulos e descrições de SEO, JSON-LD, rótulos de formulário, texto alternativo de imagem. É a
-marca registrada de texto escrito por IA, e o escritório não quer isso. No lugar:
+**Nunca use travessão (—), meia-risca (–) nem os primos da família (‒ ― −) em nada que apareça
+no site**: páginas, artigos, títulos e descrições de SEO, JSON-LD, rótulos de formulário, texto
+alternativo de imagem. É a marca registrada de texto escrito por IA, e o escritório não quer
+isso. No lugar:
 
 - **Aposto, explicação ou emenda de ideia:** vírgula, dois-pontos, parênteses, ou encerre a
   frase e comece outra. Nunca deixe a vírgula empilhar a ponto de confundir a leitura.
@@ -87,6 +88,8 @@ marca registrada de texto escrito por IA, e o escritório não quer isso. No lug
 
 Hífen comum continua normal (`e-mail`, `pt-BR`, `short stay`). A regra é sobre o texto do site;
 comentários de código e documentação técnica (este arquivo, `docs/GUIA-*`) ficam de fora.
+Conferência (**técnico**): `grep -rnP '[\x{2010}-\x{2015}\x{2212}]' src/ public/` deve devolver
+só comentários de código.
 
 ## Convenções
 

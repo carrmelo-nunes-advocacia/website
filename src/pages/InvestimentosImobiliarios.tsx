@@ -19,7 +19,7 @@ const InvestimentosImobiliarios = () => {
         {
           title: "Planejamento Patrimonial e Assessoria em Portfólios Imobiliários",
           description:
-            "Investidores com múltiplos imóveis necessitam de organização jurídica para gestão eficiente do patrimônio. A assessoria permite estruturar juridicamente portfólios imobiliários, definindo regras claras para administração, participação de investidores e sucessão patrimonial, incluindo estruturação societária, governança entre investidores e planejamento sucessório de ativos imobiliários.",
+            "Investidores com múltiplos imóveis necessitam de organização jurídica para gestão eficiente do patrimônio. A assessoria permite estruturar juridicamente portfólios imobiliários, definindo regras claras para administração, participação de investidores e sucessão patrimonial. Isso inclui estruturação societária, governança entre investidores e planejamento sucessório de ativos imobiliários.",
         },
         {
           title: "Assessoria Jurídica para Condomínios com Locação por Temporada",
@@ -29,7 +29,7 @@ const InvestimentosImobiliarios = () => {
         {
           title: "Estruturação Jurídica de Ativos Imobiliários",
           description:
-            "A organização jurídica adequada permite que o imóvel seja tratado como ativo estruturado, com regras claras de governança, gestão e exploração econômica, contribuindo para maior segurança patrimonial, estabilidade nas relações entre investidores e operadores, previsibilidade na exploração econômica e preservação do patrimônio ao longo das gerações.",
+            "A organização jurídica adequada permite que o imóvel seja tratado como ativo estruturado, com regras claras de governança, gestão e exploração econômica. Isso contribui para maior segurança patrimonial, estabilidade nas relações entre investidores e operadores, previsibilidade na exploração econômica e preservação do patrimônio ao longo das gerações.",
         },
       ]}
       benefits={[

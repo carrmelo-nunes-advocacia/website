@@ -81,7 +81,7 @@ const Escritorio = () => {
               atendimento personalizado e da atuação direta dos sócios.
             </p>
             <p>
-              Nossos pilares sempre foram, e continuam sendo, profissionalismo, confiança e
+              Nossos pilares sempre foram e continuam sendo profissionalismo, confiança e
               competência técnica. São valores que nos permitiram construir relacionamentos
               duradouros e assessorar gerações de empresários.
             </p>
