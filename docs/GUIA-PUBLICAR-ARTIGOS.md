@@ -38,14 +38,14 @@ Se o repositório não aparecer: você ainda não aceitou o convite da organiza�
 
 - Escreva o que quer, em português normal — por exemplo: *"quero adicionar um artigo no blog sobre acordo de sócios em PMEs"*. (Também funciona digitar `/novo-artigo`.)
 
-- O Claude confirma o tema e abre um **menu de opções** para você clicar: categoria, quem assina, se ele redige (curto, médio ou longo) ou se você cola o texto pronto, e para quem é o artigo. Depois, se precisar, pede o número da OAB e as fontes em texto.
+- O Claude confirma o tema e abre um **menu de opções** para você clicar: categoria, quem assina, se ele redige (curto, médio ou longo) ou se você cola o texto pronto, e para quem é o artigo. Depois, se precisar, pede as fontes em texto.
 
 #### Exemplo de resposta
 
 ```
 1. Acordo de sócios em PMEs: por que toda empresa com mais de um sócio precisa de um.
 2. Governança Empresarial
-3. Dr. Carlos Carmelo Nunes, OAB/SP 000.000
+3. Dr. Carlos Carmelo Nunes
 4. Redija você. Para empresários. Tamanho médio.
 5. Código Civil, arts. 997 a 1.038.
 ```

@@ -33,8 +33,7 @@ opção que você inferiu do tema.
    As cinco: Conflitos entre Sócios · Contratos Empresariais · Planejamento Sucessório ·
    Governança Empresarial · Investimentos Imobiliários.
 2. **Autor** — "Carlos Carmelo Nunes" · "Frederico Augusto Cavalheiro e Carmelo Nunes" ·
-   "Carmelo Nunes Sociedade de Advogados (sem assinatura individual)". Se ainda não souber o nº
-   da OAB do autor escolhido, peça em texto depois.
+   "Carmelo Nunes Sociedade de Advogados (sem assinatura individual)".
 3. **Texto** — "Redija para mim — médio (≈900 palavras)" · "Redija — curto (≈500)" ·
    "Redija — longo (≈1.400)" · "Eu tenho o texto pronto (vou colar)".
 4. **Público** — "Empresário em geral" · "Sócios de empresa" · "Investidor" · "Família empresária".
@@ -61,7 +60,7 @@ clicar, aceite normalmente. Não repita perguntas já respondidas.
 ## 3. Gravar
 
 Crie `src/content/artigos/<slug>.md` com o frontmatter do template (`title`, `description`,
-`category`, `date` = hoje em ISO, `author`, `authorOab`) e o corpo em Markdown.
+`category`, `date` = hoje em ISO, `author`) e o corpo em Markdown.
 
 ## 4. Conferir
 

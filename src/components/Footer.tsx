@@ -63,7 +63,7 @@ const Footer = () => {
             reservados.
           </p>
           <p className="text-muted-foreground text-xs flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <span>OAB/SP nº ____ • Advocacia responsável</span>
+            <span>Advocacia responsável</span>
             <span aria-hidden="true">·</span>
             <Link to="/privacidade" className="hover:text-primary transition-colors">
               Política de Privacidade
