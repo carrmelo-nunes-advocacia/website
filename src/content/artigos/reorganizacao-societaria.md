@@ -4,7 +4,6 @@ description: "Entenda o que é a reorganização societária, os principais inst
 category: "Governança Empresarial"
 date: "2026-08-27"
 author: "Carlos Carmelo Nunes"
-authorOab: "OAB/SP nº ____"
 ---
 
 À medida que uma empresa cresce, muda de sócios ou passa por momentos de transição (como a entrada de um novo investidor, a sucessão familiar ou a divisão de áreas de atuação), a estrutura societária original pode deixar de refletir a realidade do negócio. É nesse contexto que a reorganização societária se torna uma ferramenta importante: ela permite ajustar a forma jurídica da empresa às suas necessidades atuais, com segurança e planejamento.
