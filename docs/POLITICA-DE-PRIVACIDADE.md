@@ -2,7 +2,7 @@
 
 Carmelo Nunes Sociedade de Advogados · Vigência: agosto de 2026
 
-A Carmelo Nunes Sociedade de Advogados ("Carmelo Nunes" ou "Escritório"), inscrita no CNPJ sob o nº [**.**_._**/\____-**] e registrada na OAB/SP sob o nº [_____], com sede na Av. Paulista, 509 — 14º andar, São Paulo/SP, CEP 01311-000, valoriza a privacidade dos clientes, potenciais clientes e demais pessoas que se relacionam com o Escritório, e se compromete a proteger as informações pessoais coletadas durante o uso de nosso site e a prestação de nossos serviços jurídicos, em conformidade com a Lei Geral de Proteção de Dados (LGPD) e com o dever de sigilo profissional que rege a advocacia.
+A Carmelo Nunes Sociedade de Advogados ("Carmelo Nunes" ou "Escritório"), inscrita no CNPJ sob o nº [**.**_._**/\____-**] e registrada na OAB/SP sob o nº [_____], com sede na Av. Paulista, 509, 14º andar, São Paulo/SP, CEP 01311-000, valoriza a privacidade dos clientes, potenciais clientes e demais pessoas que se relacionam com o Escritório, e se compromete a proteger as informações pessoais coletadas durante o uso de nosso site e a prestação de nossos serviços jurídicos, em conformidade com a Lei Geral de Proteção de Dados (LGPD) e com o dever de sigilo profissional que rege a advocacia.
 
 Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos seus dados pessoais. Ao acessar ou utilizar nosso site, nossos canais de contato ou nossos serviços, você concorda com os termos descritos nesta política.
 
@@ -16,16 +16,16 @@ A relação entre advogado e cliente é protegida por sigilo profissional. Nada 
 
 ## 02 · Documentos de referência
 
-- Lei Federal 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).
-- Lei Federal 8.906/1994 — Estatuto da Advocacia e da OAB, em especial o dever de sigilo profissional.
+- Lei Federal 13.709/2018 (Lei Geral de Proteção de Dados Pessoais, LGPD).
+- Lei Federal 8.906/1994 (Estatuto da Advocacia e da OAB), em especial o dever de sigilo profissional.
 - Código de Ética e Disciplina da OAB.
-- Lei Federal 12.965/2014 — Marco Civil da Internet, quanto aos registros de acesso ao site.
+- Lei Federal 12.965/2014 (Marco Civil da Internet), quanto aos registros de acesso ao site.
 
 ## 03 · Termos e definições
 
 **Cliente:** pessoa física ou jurídica que contrata os serviços jurídicos da Carmelo Nunes, bem como seus sócios, administradores e representantes cujos dados sejam tratados na prestação do serviço.
 
-**Interessado:** pessoa que entra em contato com o Escritório — por formulário, e-mail, telefone ou WhatsApp — em busca de informações ou de uma primeira conversa, ainda sem contrato firmado.
+**Interessado:** pessoa que entra em contato com o Escritório (por formulário, e-mail, telefone ou WhatsApp) em busca de informações ou de uma primeira conversa, ainda sem contrato firmado.
 
 **Confidencialidade:** propriedade da informação não estar disponível ou não ser divulgada para indivíduos, entidades ou processos não autorizados.
 
@@ -78,7 +78,7 @@ Na condição de controladora dos dados pessoais, utilizamos suas informações 
 
 - Atender à sua solicitação: responder ao contato, avaliar a possibilidade de atendimento, agendar a conversa inicial e verificar a inexistência de conflito de interesses.
 - Prestar os serviços jurídicos contratados: elaborar pareceres e contratos, representar o cliente em negociações, procedimentos administrativos e processos judiciais ou arbitrais, e cumprir as obrigações do contrato de honorários.
-- Comunicação: enviar comunicações relacionadas ao seu atendimento ou ao seu caso — como confirmações de agendamento, andamentos e solicitações de documentos. Mediante seu consentimento, também podemos enviar conteúdos informativos produzidos pelo Escritório.
+- Comunicação: enviar comunicações relacionadas ao seu atendimento ou ao seu caso, como confirmações de agendamento, andamentos e solicitações de documentos. Mediante seu consentimento, também podemos enviar conteúdos informativos produzidos pelo Escritório.
 - Cumprir obrigações legais e regulatórias: emitir documentos fiscais, atender às normas da OAB e guardar documentos pelos prazos exigidos em lei.
 - Segurança: manter o funcionamento seguro do site e prevenir fraudes e acessos indevidos.
 
@@ -127,6 +127,6 @@ Os detalhes sobre os direitos dos titulares podem ser consultados no texto ofici
 
 ---
 
-**Contato — Encarregado de Proteção de Dados (DPO)**
+**Contato do Encarregado de Proteção de Dados (DPO)**
 Encarregado (DPO): [Nome do sócio responsável]
 E-mail: privacidade@carmelonunes.com.br

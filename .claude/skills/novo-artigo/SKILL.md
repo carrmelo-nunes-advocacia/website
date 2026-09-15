@@ -50,6 +50,9 @@ clicar, aceite normalmente. Não repita perguntas já respondidas.
   artificial · comparação com outros escritórios · menção a cliente/caso sem autorização ·
   "especialista" sem título reconhecido. Tom informativo e educativo; CTA no máximo
   "Fale com o escritório".
+- **Nada de travessão (—) nem meia-risca (–)** em lugar nenhum do artigo, incluindo `title` e
+  `description`. É marca de texto de IA e o escritório não aceita. Use vírgula, dois-pontos,
+  parênteses ou encerre a frase. Hífen comum (`e-mail`, `short stay`) continua normal.
 - `title` claro (≤ 70 chars). `description` ≤ 160 chars, sem reticências.
 - Slug: minúsculas, sem acento, hifens, 3–8 palavras (ex.: `acordo-de-socios-pmes`).
   **Nunca reutilize slug existente** (`ls src/content/artigos`).

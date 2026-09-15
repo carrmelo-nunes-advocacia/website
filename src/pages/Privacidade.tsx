@@ -31,7 +31,7 @@ const Privacidade = () => (
         <p className="text-muted-foreground leading-relaxed">
           A Carmelo Nunes Sociedade de Advogados ("Carmelo Nunes" ou "Escritório"), inscrita no CNPJ
           sob o nº [__.___.___/____-__] e registrada na OAB/SP sob o nº [_____], com sede na Av.
-          Paulista, 509 — 14º andar, São Paulo/SP, CEP 01311-000, valoriza a privacidade dos
+          Paulista, 509, 14º andar, São Paulo/SP, CEP 01311-000, valoriza a privacidade dos
           clientes, potenciais clientes e demais pessoas que se relacionam com o Escritório, e se
           compromete a proteger as informações pessoais coletadas durante o uso de nosso site e a
           prestação de nossos serviços jurídicos, em conformidade com a Lei Geral de Proteção de
@@ -74,14 +74,14 @@ const Privacidade = () => (
             Documentos de referência
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-            <li>Lei Federal 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).</li>
+            <li>Lei Federal 13.709/2018 (Lei Geral de Proteção de Dados Pessoais, LGPD).</li>
             <li>
-              Lei Federal 8.906/1994 — Estatuto da Advocacia e da OAB, em especial o dever de sigilo
+              Lei Federal 8.906/1994 (Estatuto da Advocacia e da OAB), em especial o dever de sigilo
               profissional.
             </li>
             <li>Código de Ética e Disciplina da OAB.</li>
             <li>
-              Lei Federal 12.965/2014 — Marco Civil da Internet, quanto aos registros de acesso ao
+              Lei Federal 12.965/2014 (Marco Civil da Internet), quanto aos registros de acesso ao
               site.
             </li>
           </ul>
@@ -98,7 +98,7 @@ const Privacidade = () => (
           </p>
           <p className="text-muted-foreground">
             <strong className="text-foreground font-heading">Interessado:</strong> pessoa que entra
-            em contato com o Escritório — por formulário, e-mail, telefone ou WhatsApp — em busca de
+            em contato com o Escritório (por formulário, e-mail, telefone ou WhatsApp) em busca de
             informações ou de uma primeira conversa, ainda sem contrato firmado.
           </p>
           <p className="text-muted-foreground">
@@ -241,7 +241,7 @@ const Privacidade = () => (
               arbitrais, e cumprir as obrigações do contrato de honorários.
             </li>
             <li>
-              Comunicação: enviar comunicações relacionadas ao seu atendimento ou ao seu caso — como
+              Comunicação: enviar comunicações relacionadas ao seu atendimento ou ao seu caso, como
               confirmações de agendamento, andamentos e solicitações de documentos. Mediante seu
               consentimento, também podemos enviar conteúdos informativos produzidos pelo
               Escritório.
@@ -378,7 +378,7 @@ const Privacidade = () => (
         <div className="mt-12 rounded-lg bg-card card-shadow p-8 space-y-2">
           <p className="text-muted-foreground leading-relaxed">
             <strong className="text-foreground">
-              Contato — Encarregado de Proteção de Dados (DPO)
+              Contato do Encarregado de Proteção de Dados (DPO)
             </strong>
           </p>
           <p className="text-muted-foreground leading-relaxed">

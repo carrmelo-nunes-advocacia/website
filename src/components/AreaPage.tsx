@@ -57,7 +57,7 @@ const AreaPage = ({
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    name: `${title} — Carmelo Nunes Sociedade de Advogados`,
+    name: `${title} | Carmelo Nunes Sociedade de Advogados`,
     description: seoDescription || subtitle,
     url: canonical ? `${BASE_URL}${canonical}` : BASE_URL,
     areaServed: { "@type": "Country", name: "Brasil" },

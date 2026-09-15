@@ -50,8 +50,8 @@ const Footer = () => {
                 <Phone size={14} strokeWidth={1} />
                 +55 11 3149-5050
               </a>
-              <p>Av. Paulista, 509 — 14º andar</p>
-              <p>Bela Vista — São Paulo — SP</p>
+              <p>Av. Paulista, 509, 14º andar</p>
+              <p>Bela Vista, São Paulo/SP</p>
               <p>CEP 01311-000</p>
             </div>
           </div>

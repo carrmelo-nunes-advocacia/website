@@ -37,7 +37,7 @@ const Contato = () => {
     <PageLayout>
       <SEO
         title="Contato"
-        description="Fale com o Carmelo Nunes Sociedade de Advogados. Av. Paulista, 509 — 14º andar, São Paulo. Telefone +55 11 3149-5050. Resposta em até 24 horas úteis."
+        description="Fale com o Carmelo Nunes Sociedade de Advogados. Av. Paulista, 509, 14º andar, São Paulo. Telefone +55 11 3149-5050. Resposta em até 24 horas úteis."
         canonical="/contato"
       />
       <section className="bg-secondary py-20 md:py-28">
@@ -217,9 +217,9 @@ const Contato = () => {
                   <div>
                     <p className="text-sm text-foreground font-medium">Localização</p>
                     <p className="text-sm text-muted-foreground">
-                      Av. Paulista, 509 — 14º andar
+                      Av. Paulista, 509, 14º andar
                       <br />
-                      Bela Vista — São Paulo — SP
+                      Bela Vista, São Paulo/SP
                       <br />
                       CEP 01311-000
                     </p>

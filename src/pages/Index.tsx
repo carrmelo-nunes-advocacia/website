@@ -85,7 +85,7 @@ const Index = () => {
             priceRange: "$$$",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Av. Paulista, 509 — 14º andar",
+              streetAddress: "Av. Paulista, 509, 14º andar",
               addressLocality: "São Paulo",
               addressRegion: "SP",
               postalCode: "01311-000",
@@ -227,7 +227,7 @@ const Index = () => {
             <div className="mt-6 space-y-4 text-foreground/70 leading-relaxed text-pretty">
               <p>
                 Não somos uma linha de montagem jurídica. No Carmelo Nunes, a estratégia do seu
-                negócio é desenhada pelos sócios fundadores — profissionais com décadas de
+                negócio é desenhada pelos sócios fundadores, profissionais com décadas de
                 experiência e profundo conhecimento das dinâmicas empresariais.
               </p>
               <p>
@@ -252,7 +252,7 @@ const Index = () => {
             Acesso direto à senioridade. Experiência que dita os rumos do seu negócio.
           </h2>
           <p className="text-muted-foreground text-center mt-4 max-w-2xl mx-auto text-pretty leading-relaxed">
-            No Carmelo Nunes, cada cliente é atendido diretamente pelos sócios — com a dedicação e a
+            No Carmelo Nunes, cada cliente é atendido diretamente pelos sócios, com a dedicação e a
             profundidade que a complexidade do seu negócio exige.
           </p>
 
