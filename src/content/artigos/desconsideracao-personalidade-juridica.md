@@ -7,7 +7,7 @@ author: "Frederico Augusto Cavalheiro e Carmelo Nunes"
 authorOab: "OAB/SP nº ____"
 ---
 
-Quem constitui uma sociedade empresária cria, com isso, uma pessoa distinta de si mesmo: a empresa tem CNPJ próprio, patrimônio próprio e responde por suas próprias obrigações. Essa separação não é um detalhe formal — é o que permite empreender sem colocar em risco, a cada contrato assinado, o patrimônio construído ao longo da vida. Ainda assim, não é raro que o empresário descubra, já no curso de uma execução, que seus bens pessoais foram alcançados por uma dívida da empresa. Entender quando isso pode legitimamente acontecer, e sobretudo o que mantém a sociedade fora dessas hipóteses, é parte da governança de qualquer negócio.
+Quem constitui uma sociedade empresária cria, com isso, uma pessoa distinta de si mesmo: a empresa tem CNPJ próprio, patrimônio próprio e responde por suas próprias obrigações. Essa separação não é um detalhe formal: é o que permite empreender sem colocar em risco, a cada contrato assinado, o patrimônio construído ao longo da vida. Ainda assim, não é raro que o empresário descubra, já no curso de uma execução, que seus bens pessoais foram alcançados por uma dívida da empresa. Entender quando isso pode legitimamente acontecer, e sobretudo o que mantém a sociedade fora dessas hipóteses, é parte da governança de qualquer negócio.
 
 ## A separação patrimonial é a regra
 
@@ -21,7 +21,7 @@ O art. 50 do Código Civil, na redação dada pela Lei da Liberdade Econômica (
 
 **Desvio de finalidade** (§ 1º): a utilização da pessoa jurídica com o propósito de lesar credores ou para a prática de atos ilícitos de qualquer natureza. O elemento decisivo é o uso da empresa como anteparo.
 
-**Confusão patrimonial** (§ 2º): a ausência de separação de fato entre os patrimônios. A lei traz exemplos concretos — o cumprimento repetitivo, pela sociedade, de obrigações do sócio ou do administrador (ou o inverso); a transferência de ativos ou de passivos sem contraprestação efetiva, salvo os de valor irrisório; e outros atos de descumprimento da autonomia patrimonial.
+**Confusão patrimonial** (§ 2º): a ausência de separação de fato entre os patrimônios. A lei traz exemplos concretos: o cumprimento repetitivo, pela sociedade, de obrigações do sócio ou do administrador (ou o inverso); a transferência de ativos ou de passivos sem contraprestação efetiva, salvo os de valor irrisório; e outros atos de descumprimento da autonomia patrimonial.
 
 Há ainda a chamada desconsideração inversa (§ 3º): quando o sócio esvazia o próprio patrimônio transferindo bens para a sociedade, as obrigações dele podem ser estendidas à pessoa jurídica.
 
