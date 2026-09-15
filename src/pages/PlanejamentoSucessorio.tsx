@@ -8,7 +8,7 @@ const PlanejamentoSucessorio = () => {
       seoDescription="Planejamento sucessório de empresas familiares, holdings patrimoniais e organização patrimonial familiar. Escritório em São Paulo desde 1973."
       canonical="/atuacao/planejamento-sucessorio-empresarios"
       subtitle="Planejamento sucessório focado em não interromper a operação da empresa e proteger o patrimônio familiar-empresarial."
-      intro="Quando família e empresa se entrelaçam, o planejamento sucessório ganha uma complexidade única. Nossa atuação integra Direito Societário e Direito Sucessório para garantir que a transição geracional ocorra sem rupturas — preservando tanto o patrimônio quanto a continuidade operacional do negócio."
+      intro="Quando família e empresa se entrelaçam, o planejamento sucessório ganha uma complexidade única. Nossa atuação integra Direito Societário e Direito Sucessório para garantir que a transição geracional ocorra sem rupturas, preservando tanto o patrimônio quanto a continuidade operacional do negócio."
       services={[
         {
           title: "Planejamento sucessório de empresas familiares",
@@ -46,17 +46,17 @@ const PlanejamentoSucessorio = () => {
         {
           question: "Holding familiar vale a pena?",
           answer:
-            "Para famílias com patrimônio relevante — empresarial e/ou imobiliário — a holding costuma trazer ganhos em governança, proteção patrimonial, eficiência tributária e organização sucessória. O modelo deve ser desenhado caso a caso: estrutura societária, regras de governança, acordo de sócios e instrumentos de doação com reserva de usufruto.",
+            "Para famílias com patrimônio relevante, empresarial e/ou imobiliário, a holding costuma trazer ganhos em governança, proteção patrimonial, eficiência tributária e organização sucessória. O modelo deve ser desenhado caso a caso: estrutura societária, regras de governança, acordo de sócios e instrumentos de doação com reserva de usufruto.",
         },
         {
           question: "Quando é o momento certo para começar a planejar a sucessão?",
           answer:
-            "Antes de ser necessário. O planejamento sucessório é eficiente justamente quando feito com tempo, em saúde e com diálogo familiar — permitindo testar o modelo, ajustar a governança e preparar os sucessores. Esperar uma crise ou um evento de saúde reduz drasticamente as opções jurídicas disponíveis.",
+            "Antes de ser necessário. O planejamento sucessório é eficiente justamente quando feito com tempo, em saúde e com diálogo familiar. Assim é possível testar o modelo, ajustar a governança e preparar os sucessores. Esperar uma crise ou um evento de saúde reduz drasticamente as opções jurídicas disponíveis.",
         },
         {
           question: "Como evitar conflitos entre herdeiros em empresas familiares?",
           answer:
-            "Combinando estrutura societária adequada, acordo de sócios, protocolo familiar, regras claras de entrada e saída de herdeiros na gestão e mecanismos de solução de impasse. Mais do que documentos, o processo envolve diálogo estruturado entre as gerações — frequentemente conduzido com apoio do escritório.",
+            "Combinando estrutura societária adequada, acordo de sócios, protocolo familiar, regras claras de entrada e saída de herdeiros na gestão e mecanismos de solução de impasse. Mais do que documentos, o processo envolve diálogo estruturado entre as gerações, frequentemente conduzido com apoio do escritório.",
         },
       ]}
     />

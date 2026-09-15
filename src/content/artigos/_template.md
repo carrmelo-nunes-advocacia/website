@@ -1,6 +1,6 @@
 ---
 title: "Título do artigo (claro, sem promessa de resultado)"
-description: "Resumo de uma frase, até 160 caracteres — aparece no card e no Google."
+description: "Resumo de uma frase, até 160 caracteres. Aparece no card e no Google."
 category: "Contratos Empresariais"
 date: "2026-08-26"
 author: "Nome do Sócio"

@@ -34,4 +34,4 @@ Quando a relação entre os sócios já se deteriorou e não há acordo de sóci
 
 ## Conclusão
 
-Conflitos entre sócios raramente surgem do nada — costumam ser o resultado de regras que não foram combinadas no início da sociedade. Um acordo de sócios bem estruturado, aliado a mecanismos de governança e de resolução de impasses, é o instrumento mais eficiente para reduzir esse risco. E, quando o conflito já é uma realidade, o ordenamento jurídico oferece caminhos, da mediação à dissolução parcial, para resolvê-lo com segurança jurídica para todas as partes. Fale com o escritório para avaliar a situação da sua sociedade.
+Conflitos entre sócios raramente surgem do nada: costumam ser o resultado de regras que não foram combinadas no início da sociedade. Um acordo de sócios bem estruturado, aliado a mecanismos de governança e de resolução de impasses, é o instrumento mais eficiente para reduzir esse risco. E, quando o conflito já é uma realidade, o ordenamento jurídico oferece caminhos, da mediação à dissolução parcial, para resolvê-lo com segurança jurídica para todas as partes. Fale com o escritório para avaliar a situação da sua sociedade.

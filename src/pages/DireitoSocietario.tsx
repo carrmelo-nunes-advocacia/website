@@ -41,7 +41,7 @@ const DireitoSocietario = () => {
         {
           question: "O que fazer em caso de conflito entre sócios?",
           answer:
-            "O primeiro passo é mapear juridicamente a situação societária — contrato social, acordo de sócios, histórico de deliberações e fluxo financeiro. A partir desse diagnóstico, avaliamos caminhos de mediação, renegociação do acordo, exclusão de sócio, dissolução parcial ou apuração de haveres. Sempre que possível, priorizamos soluções negociadas para preservar a continuidade do negócio.",
+            "O primeiro passo é mapear juridicamente a situação societária: contrato social, acordo de sócios, histórico de deliberações e fluxo financeiro. A partir desse diagnóstico, avaliamos caminhos de mediação, renegociação do acordo, exclusão de sócio, dissolução parcial ou apuração de haveres. Sempre que possível, priorizamos soluções negociadas para preservar a continuidade do negócio.",
         },
         {
           question: "O que é um acordo de sócios e por que minha empresa precisa de um?",

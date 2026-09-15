@@ -8,7 +8,7 @@ const DireitoEmpresarial = () => {
       seoDescription="Elaboração, revisão e negociação de contratos empresariais complexos. Gestão preventiva de riscos contratuais. Escritório em São Paulo desde 1973."
       canonical="/atuacao/direito-empresarial-contratos"
       subtitle="Estruturação, revisão e negociação de contratos complexos para proteger e impulsionar seus negócios com segurança jurídica."
-      intro="Contratos são a espinha dorsal de qualquer operação empresarial. No Carmelo Nunes, tratamos cada contrato como um instrumento de governança — uma ferramenta estratégica que antecipa riscos, define responsabilidades e protege os interesses do seu negócio. Nossa abordagem vai além da redação técnica: analisamos o contexto comercial, identificamos vulnerabilidades e desenhamos cláusulas que funcionam na prática."
+      intro="Contratos são a espinha dorsal de qualquer operação empresarial. No Carmelo Nunes, tratamos cada contrato como um instrumento de governança, uma ferramenta estratégica que antecipa riscos, define responsabilidades e protege os interesses do seu negócio. Nossa abordagem vai além da redação técnica: analisamos o contexto comercial, identificamos vulnerabilidades e desenhamos cláusulas que funcionam na prática."
       services={[
         {
           title: "Elaboração e revisão de contratos empresariais",
@@ -41,7 +41,7 @@ const DireitoEmpresarial = () => {
         {
           question: "Quando contratar um advogado para revisar contratos empresariais?",
           answer:
-            "Idealmente antes de qualquer assinatura relevante — fornecimento, distribuição, parceria, joint venture, NDA ou prestação de serviços B2B. A revisão prévia identifica cláusulas de risco, ambiguidades e omissões que costumam gerar litígio. Para empresas com volume contratual recorrente, recomendamos rotina de revisão periódica da carteira.",
+            "Idealmente antes de qualquer assinatura relevante (fornecimento, distribuição, parceria, joint venture, NDA ou prestação de serviços B2B). A revisão prévia identifica cláusulas de risco, ambiguidades e omissões que costumam gerar litígio. Para empresas com volume contratual recorrente, recomendamos rotina de revisão periódica da carteira.",
         },
         {
           question: "Quais cláusulas são essenciais em um contrato empresarial?",

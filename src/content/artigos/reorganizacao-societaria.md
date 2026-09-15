@@ -7,7 +7,7 @@ author: "Carlos Carmelo Nunes"
 authorOab: "OAB/SP nº ____"
 ---
 
-À medida que uma empresa cresce, muda de sócios ou passa por momentos de transição — como entrada de um novo investidor, sucessão familiar ou divisão de áreas de atuação —, a estrutura societária original pode deixar de refletir a realidade do negócio. É nesse contexto que a reorganização societária se torna uma ferramenta importante: ela permite ajustar a forma jurídica da empresa às suas necessidades atuais, com segurança e planejamento.
+À medida que uma empresa cresce, muda de sócios ou passa por momentos de transição (como a entrada de um novo investidor, a sucessão familiar ou a divisão de áreas de atuação), a estrutura societária original pode deixar de refletir a realidade do negócio. É nesse contexto que a reorganização societária se torna uma ferramenta importante: ela permite ajustar a forma jurídica da empresa às suas necessidades atuais, com segurança e planejamento.
 
 ## O que é a reorganização societária
 
@@ -21,7 +21,7 @@ Entre os cenários mais comuns em que sócios buscam orientação sobre reorgani
 
 Uma reorganização bem conduzida exige atenção a alguns pontos centrais. O contrato ou estatuto social precisa refletir com precisão a nova estrutura de participações e de administração. As obrigações contratuais e trabalhistas já assumidas pela empresa devem ser mapeadas, para que a reorganização não gere passivos inesperados. E os aspectos tributários da operação devem ser avaliados com cuidado, já que escolhas diferentes podem ter impactos relevantes nos custos e nas obrigações fiscais envolvidas.
 
-Além disso, quando há mais de um sócio, é recomendável que o processo seja formalizado por meio de um acordo entre eles, deixando claro o motivo da reorganização e os termos acordados — o que reduz a chance de divergências futuras.
+Além disso, quando há mais de um sócio, é recomendável que o processo seja formalizado por meio de um acordo entre eles, deixando claro o motivo da reorganização e os termos acordados, o que reduz a chance de divergências futuras.
 
 ## Conclusão
 

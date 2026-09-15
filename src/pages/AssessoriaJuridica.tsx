@@ -24,7 +24,7 @@ const AssessoriaJuridica = () => {
         {
           title: "Organização das relações empresariais",
           description:
-            "Estruturação adequada de contratos estratégicos, relações entre sócios e administradores, regras de governança empresarial e parcerias comerciais e operacionais — fortalecendo a estabilidade das operações.",
+            "Estruturação adequada de contratos estratégicos, relações entre sócios e administradores, regras de governança empresarial e parcerias comerciais e operacionais, fortalecendo a estabilidade das operações.",
         },
         {
           title: "Apoio jurídico nas decisões empresariais",
@@ -48,12 +48,12 @@ const AssessoriaJuridica = () => {
         {
           question: "Qual o porte ideal de empresa para contratar assessoria contínua?",
           answer:
-            "Pequenas e médias empresas em crescimento, holdings familiares e sociedades com mais de um sócio costumam ser as que mais se beneficiam — pelo volume de decisões com impacto jurídico e pela ausência de departamento jurídico interno. Também atendemos empresas com jurídico interno que buscam segunda opinião sênior em temas estratégicos.",
+            "Pequenas e médias empresas em crescimento, holdings familiares e sociedades com mais de um sócio costumam ser as que mais se beneficiam, tanto pelo volume de decisões com impacto jurídico quanto pela ausência de departamento jurídico interno. Também atendemos empresas com jurídico interno que buscam segunda opinião sênior em temas estratégicos.",
         },
         {
           question: "Como é a cobrança da assessoria jurídica recorrente?",
           answer:
-            "Trabalhamos com fee mensal calculado a partir do escopo acordado e do volume estimado de demandas. Demandas extraordinárias — como litígios, M&A ou reorganizações societárias — são tratadas em projetos apartados, com proposta específica.",
+            "Trabalhamos com fee mensal calculado a partir do escopo acordado e do volume estimado de demandas. Demandas extraordinárias (como litígios, M&A ou reorganizações societárias) são tratadas em projetos apartados, com proposta específica.",
         },
         {
           question: "Em quanto tempo recebo retorno em uma demanda urgente?",

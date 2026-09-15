@@ -18,7 +18,7 @@ const WAZE = `https://waze.com/ul?q=${encodeURIComponent(ENDERECO)}&ll=${LAT}%2C
 const MapaEscritorio = () => (
   <div className="card-shadow rounded-lg bg-card overflow-hidden">
     <iframe
-      title="Mapa — localização do escritório na Av. Paulista, 509"
+      title="Mapa da localização do escritório na Av. Paulista, 509"
       src={OSM_EMBED}
       className="w-full h-56 border-0 [filter:grayscale(1)_invert(0.92)_hue-rotate(180deg)_brightness(0.9)_contrast(0.9)]"
       loading="lazy"

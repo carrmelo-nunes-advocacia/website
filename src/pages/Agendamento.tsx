@@ -20,9 +20,9 @@ const ASSUNTOS = [
 ] as const;
 
 const URGENCIAS = [
-  { value: "baixa", label: "Baixa — posso aguardar" },
-  { value: "media", label: "Média — nas próximas semanas" },
-  { value: "alta", label: "Alta — situação urgente" },
+  { value: "baixa", label: "Baixa (posso aguardar)" },
+  { value: "media", label: "Média (nas próximas semanas)" },
+  { value: "alta", label: "Alta (situação urgente)" },
 ] as const;
 
 const schema = z.object({
@@ -130,7 +130,7 @@ const Agendamento = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Agendamento de Consulta — Carmelo Nunes Sociedade de Advogados",
+    name: "Agendamento de Consulta | Carmelo Nunes Sociedade de Advogados",
     url: "https://carmelonunes.com.br/agendamento",
     description:
       "Agende uma consulta estratégica com os sócios do Carmelo Nunes Sociedade de Advogados.",
@@ -507,9 +507,9 @@ const Agendamento = () => {
                   <div>
                     <p className="text-sm text-foreground font-medium">Localização</p>
                     <p className="text-sm text-muted-foreground">
-                      Av. Paulista, 509 — 14º andar
+                      Av. Paulista, 509, 14º andar
                       <br />
-                      Bela Vista — São Paulo — SP
+                      Bela Vista, São Paulo/SP
                       <br />
                       CEP 01311-000
                     </p>
