@@ -9,7 +9,9 @@ Versão de 26 de agosto de 2026 · Parte A é feita uma vez; Parte B, a cada art
 
 ## Parte A · Configuração (uma vez)
 
-### A1 · Conta no GitHub
+### A1 · Conta no GitHub — ✓ já feito
+
+> **Etapa concluída** — sua conta no GitHub já foi criada e configurada com o Pedro. Pule direto para a A2.
 
 O GitHub é onde o site fica guardado. Você precisa de uma conta gratuita.
 
