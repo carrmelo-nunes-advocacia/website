@@ -23,14 +23,18 @@ O GitHub é onde o site fica guardado. Você precisa de uma conta gratuita.
 
 ### A2 · Conectar o Claude ao GitHub
 
-- Abra **claude.ai/code** (não é o chat comum) e entre com a conta do Claude do escritório (plano Pro).
-- Se aparecer um botão para **conectar o GitHub**, clique e entre com a **sua conta GitHub** (a que aceitou o convite). Autorize o aplicativo **Claude**.
-- **Abaixo da caixa de mensagem** há um seletor de repositório. Clique e escolha **carrmelo-nunes-advocacia / website**. Ao lado, no seletor de modo, deixe **Accept edits**.
-- Pronto — não há mais nada a instalar: o aplicativo Claude já está instalado na organização pelo Pedro.
+- Abra **claude.ai** e entre com a conta do Claude do escritório (plano Pro). No menu da esquerda, clique em **Claude Code** — ou use o botão `</>` no topo:
+
+![Menu do claude.ai com a seção Claude Code](img/a2-abrir-claude-code.png)
+
+- Se aparecer um botão para **conectar o GitHub**, clique e entre com a **sua conta GitHub**. Autorize o aplicativo **Claude**. Não há mais nada a instalar.
+- Logo **acima da caixa de mensagem**, clique no botão com `</>` e escolha **website** (repositório). Deixe **main** como está. O seletor de modo fica embaixo, à esquerda (ex.: **Auto**) — pode deixar como está:
+
+![Barra da sessão: Default, website, main e o modo Auto](img/a2-selecionar-repo.png)
 
 **Não use** *Settings → Connectors → GitHub Integration*: isso é outra coisa (conector do chat) e não faz o repositório aparecer.
 
-Se o repositório não aparecer: você ainda não aceitou o convite da organização (A1, passo 3) ou entrou no GitHub com outra conta. Aceite/corrija e recarregue a página.
+Se o repositório **website** não aparecer: você ainda não aceitou o convite da organização (e-mail "Join carrmelo-nunes-advocacia") ou entrou no GitHub com outra conta. Aceite/corrija e recarregue a página.
 
 ## Parte B · Uso (a cada artigo)
 
