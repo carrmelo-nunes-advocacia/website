@@ -62,7 +62,6 @@ function build(): Artigo[] {
       category: meta.category as Categoria,
       date: meta.date,
       author: meta.author ?? "Carmelo Nunes Sociedade de Advogados",
-      authorOab: meta.authorOab,
       updated: meta.updated,
       html: marked.parse(body, { async: false }) as string,
     });
