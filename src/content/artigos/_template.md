@@ -4,7 +4,6 @@ description: "Resumo de uma frase, até 160 caracteres. Aparece no card e no Goo
 category: "Contratos Empresariais"
 date: "2026-08-26"
 author: "Nome do Sócio"
-authorOab: "OAB/SP 000.000"
 ---
 
 Primeiro parágrafo: contexto e por que o tema importa para o empresário.

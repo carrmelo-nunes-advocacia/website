@@ -4,7 +4,6 @@ description: "Entenda as causas mais frequentes de conflitos entre sócios e os 
 category: "Conflitos entre Sócios"
 date: "2026-08-26"
 author: "Frederico Augusto Cavalheiro e Carmelo Nunes"
-authorOab: "OAB/SP nº ____"
 ---
 
 Toda sociedade nasce de um projeto em comum, mas a experiência mostra que a solidez de uma empresa depende tanto do negócio quanto da relação entre os sócios. Conflitos societários estão entre as principais causas de desgaste e, em muitos casos, de encerramento precoce de empresas, não porque o negócio deixou de ser viável, mas porque a relação entre quem o conduz se rompeu.

@@ -70,7 +70,7 @@ escrever ou revisar texto do site, **não** aceite nem gere:
 - Menção a clientes/casos sem autorização; comparação com outros escritórios.
 - Termos como "especialista" sem título de especialização reconhecido.
 
-Tom: informativo, sóbrio, educativo. Sempre exibir nome do escritório e número(s) de OAB.
+Tom: informativo, sóbrio, educativo. Sempre exibir o nome do escritório.
 Se um pedido esbarrar nessas regras, explique em uma linha e proponha alternativa.
 
 ## Estilo de escrita (vale para todo texto do site)
@@ -147,6 +147,7 @@ produção — ele sobrescreve o site com o protótipo.
 - [ ] Conectar a Netlify ao repo (build `pnpm build`, publish `dist`); deploy previews públicos.
 - [ ] Netlify → Forms → notificação por e-mail para `secretaria@carmelonunes.com.br`.
 - [ ] Domínio `carmelonunes.com.br` (HostGator) → Netlify + DNS, só após validação completa; redirects 301 do WordPress já em `netlify.toml`.
-- [ ] Preencher CNPJ, nº OAB/SP (Footer e Privacidade) e nome do DPO; criar `privacidade@carmelonunes.com.br`. (Site antigo não tem esses dados — pedir ao escritório.)
+- [ ] Preencher CNPJ e nome do DPO em `Privacidade.tsx`/`docs/POLITICA-DE-PRIVACIDADE.md` (ainda com placeholders); criar `privacidade@carmelonunes.com.br`. (Site antigo não tem esses dados — pedir ao escritório.)
+- [ ] Nº OAB/SP: saiu do rodapé e do frontmatter dos artigos por decisão do escritório. `authorOab` segue opcional em `artigos.ts`/`Artigo.tsx`; repor é só acrescentar a linha no frontmatter. Privacidade ainda traz o registro da sociedade como placeholder.
 - [ ] Primeiro artigo real (hoje `/conteudo` mostra "Em breve") — via `/novo-artigo`.
 - [ ] Rever `public/llms.txt` e `public/placeholder.svg` (herança Lovable).

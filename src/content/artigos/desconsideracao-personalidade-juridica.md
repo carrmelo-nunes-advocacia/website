@@ -4,7 +4,6 @@ description: "A separação entre o patrimônio da empresa e o dos sócios é a 
 category: "Governança Empresarial"
 date: "2026-09-15"
 author: "Frederico Augusto Cavalheiro e Carmelo Nunes"
-authorOab: "OAB/SP nº ____"
 ---
 
 Quem constitui uma sociedade empresária cria, com isso, uma pessoa distinta de si mesmo: a empresa tem CNPJ próprio, patrimônio próprio e responde por suas próprias obrigações. Essa separação não é um detalhe formal. É o que permite empreender sem colocar em risco, a cada contrato assinado, o patrimônio construído ao longo da vida. Ainda assim, não é raro que o empresário descubra, já no curso de uma execução, que seus bens pessoais foram alcançados por uma dívida da empresa. Entender quando isso pode legitimamente acontecer, e sobretudo o que mantém a sociedade fora dessas hipóteses, é parte da governança de qualquer negócio.
