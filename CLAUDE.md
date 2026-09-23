@@ -37,14 +37,14 @@ pessoa precisa ser orientada a fazê-lo.
   componente `src/components/AreaPage.tsx`. Textos ficam dentro de cada página.
 - **Conteúdo / artigos (o conteúdo recorrente)** — um arquivo Markdown por artigo em
   `src/content/artigos/<slug>.md` (frontmatter: `title`, `description`, `category`, `date`,
-  `author`, `authorOab`; modelo em `_template.md`). Carregados por `src/lib/artigos.ts`
+  `author`; modelo em `_template.md`). Carregados por `src/lib/artigos.ts`
   (`import.meta.glob` + `marked`), listados em `/conteudo` (`Conteudo.tsx`, filtro por
   categoria) e renderizados em `/conteudo/<slug>` (`Artigo.tsx`, JSON-LD `BlogPosting`).
   **Publicar artigo = criar o `.md`** — a skill `/novo-artigo` faz o fluxo inteiro.
   Categorias fixas em `CATEGORIAS`. Arquivos que começam com `_` são ignorados.
 - **Sócios, história, princípios** — `src/pages/Escritorio.tsx`. Fotos em `src/assets/`.
 - **Navegação e rodapé** — `src/components/Navbar.tsx`, `src/components/Footer.tsx`
-  (telefone, endereço, OAB, link da Privacidade). WhatsApp: `src/components/WhatsAppButton.tsx`.
+  (telefone, endereço, link da Privacidade). WhatsApp: `src/components/WhatsAppButton.tsx`.
 - **SEO por página** — cada página renderiza `<SEO title description canonical jsonLd />`
   (`src/components/SEO.tsx`, **técnico**). Home tem JSON-LD `LegalService`. `public/sitemap.xml`
   é **gerado no build** por `scripts/gen-sitemap.mjs` (rotas fixas + artigos) e **não é versionado**
@@ -53,7 +53,7 @@ pessoa precisa ser orientada a fazê-lo.
   (`src/lib/netlify-forms.ts`; detecção via `public/__forms.html`). Adicionar campo = nos dois
   lugares. Notificações por e-mail configuradas no painel da Netlify.
 - **Política de Privacidade (LGPD)** — texto-fonte em `docs/POLITICA-DE-PRIVACIDADE.md`;
-  página em `src/pages/Privacidade.tsx`. Placeholders a preencher: CNPJ, nº OAB, DPO.
+  página em `src/pages/Privacidade.tsx`. Placeholders a preencher: CNPJ, DPO.
 - **Design tokens** — `src/index.css` (HSL: navy `--background`, dourado `--primary`,
   `--radius`), `tailwind.config.ts`. Fontes Playfair Display (títulos) + Inter (corpo).
   Usar classes/tokens, não hex crus.
@@ -70,7 +70,7 @@ escrever ou revisar texto do site, **não** aceite nem gere:
 - Menção a clientes/casos sem autorização; comparação com outros escritórios.
 - Termos como "especialista" sem título de especialização reconhecido.
 
-Tom: informativo, sóbrio, educativo. Sempre exibir nome do escritório e número(s) de OAB.
+Tom: informativo, sóbrio, educativo. Sempre exibir o nome do escritório. (Nº de OAB fora do site por decisão do escritório, 2026-09-23.)
 Se um pedido esbarrar nessas regras, explique em uma linha e proponha alternativa.
 
 ## Estilo de escrita (vale para todo texto do site)
@@ -147,6 +147,6 @@ produção — ele sobrescreve o site com o protótipo.
 - [ ] Conectar a Netlify ao repo (build `pnpm build`, publish `dist`); deploy previews públicos.
 - [ ] Netlify → Forms → notificação por e-mail para `secretaria@carmelonunes.com.br`.
 - [ ] Domínio `carmelonunes.com.br` (HostGator) → Netlify + DNS, só após validação completa; redirects 301 do WordPress já em `netlify.toml`.
-- [ ] Preencher CNPJ, nº OAB/SP (Footer e Privacidade) e nome do DPO; criar `privacidade@carmelonunes.com.br`. (Site antigo não tem esses dados — pedir ao escritório.)
+- [ ] Preencher CNPJ e nome do DPO na Privacidade; criar `privacidade@carmelonunes.com.br`. (Site antigo não tem esses dados — pedir ao escritório.)
 - [ ] Primeiro artigo real (hoje `/conteudo` mostra "Em breve") — via `/novo-artigo`.
 - [ ] Rever `public/llms.txt` e `public/placeholder.svg` (herança Lovable).

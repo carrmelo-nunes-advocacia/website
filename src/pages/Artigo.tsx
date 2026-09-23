@@ -56,8 +56,7 @@ const Artigo = () => {
             {artigo.title}
           </h1>
           <p className="text-muted-foreground mt-6 text-sm font-body">
-            {artigo.author}
-            {artigo.authorOab ? ` · ${artigo.authorOab}` : ""} ·{" "}
+            {artigo.author} ·{" "}
             <time dateTime={artigo.date}>{formatDate(artigo.date)}</time>
           </p>
         </div>
