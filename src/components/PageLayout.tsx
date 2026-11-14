@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import AvisoTelefone from "./AvisoTelefone";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -21,6 +22,7 @@ const PageLayout = ({ children }: PageLayoutProps) => {
         {children}
       </main>
       <Footer />
+      <AvisoTelefone />
     </div>
   );
 };
